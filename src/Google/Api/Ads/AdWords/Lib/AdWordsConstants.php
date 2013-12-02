@@ -32,6 +32,9 @@
  * @package GoogleApiAdsAdWords
  * @subpackage Lib
  */
+
+namespace Google\Api\Ads\AdWords\Lib;
+
 class AdWordsConstants {
   /**
    * Recommended page size for most services.

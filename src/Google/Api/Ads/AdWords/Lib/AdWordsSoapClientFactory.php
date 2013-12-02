@@ -28,9 +28,10 @@
  * @see        SoapClientFactory
  */
 
-/** Required classes. **/
-require_once dirname(__FILE__) . '/../../Common/Lib/AdsUser.php';
-require_once dirname(__FILE__) . '/../../Common/Lib/SoapClientFactory.php';
+namespace Google\Api\Ads\AdWords\Lib;
+
+use \Google\Api\Ads\Common\Lib\AdsUser,
+	\Google\Api\Ads\Common\Lib\SoapClientFactory;
 
 /**
  * Factory class for SOAP clients for the AdWords API.
@@ -67,7 +68,8 @@ class AdWordsSoapClientFactory extends SoapClientFactory {
    * @param string $serviceName the service to instantiate
    */
   public function DoRequireOnce($serviceName) {
-    require_once implode("/", array(dirname(__FILE__), '..',
-        $this->GetVersion(), $serviceName . '.php'));
+    
+  	//require_once implode("/", array(dirname(__FILE__), '..',
+    //    $this->GetVersion(), $serviceName . '.php'));
   }
 }

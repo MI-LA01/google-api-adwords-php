@@ -28,9 +28,11 @@
  */
 
 /** Required classes. **/
-require_once "Google/Api/Ads/AdWords/Lib/AdWordsSoapClient.php";
 
-if (!class_exists("Ad", FALSE)) {
+namespace Google\Api\Ads\AdWords\v201306;
+
+use \Google\Api\Ads\AdWords\Lib\AdWordsSoapClient;
+
 /**
  * The base class of all ad types. To update basic ad fields,
  * you can construct an {@code Ad} object (instead of
@@ -132,9 +134,8 @@ class Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("AdGroupAd", FALSE)) {
 /**
  * Represents an ad in an ad group.
  * @package GoogleApiAdsAdWords
@@ -215,9 +216,8 @@ class AdGroupAd {
     $this->stats = $stats;
     $this->forwardCompatibilityMap = $forwardCompatibilityMap;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdExperimentData", FALSE)) {
 /**
  * Data associated with an advertiser experiment for an AdGroupAd
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
@@ -264,9 +264,8 @@ class AdGroupAdExperimentData {
     $this->experimentDeltaStatus = $experimentDeltaStatus;
     $this->experimentDataStatus = $experimentDataStatus;
   }
-}}
+}
 
-if (!class_exists("AdUnionId", FALSE)) {
 /**
  * Represents an id indicating a grouping of Ads under some heuristic.
  * @package GoogleApiAdsAdWords
@@ -337,9 +336,8 @@ class AdUnionId {
     $this->id = $id;
     $this->AdUnionIdType = $AdUnionIdType;
   }
-}}
+}
 
-if (!class_exists("ApiError", FALSE)) {
 /**
  * The API error base class that provides details about an error that occurred
  * while processing a service request.
@@ -428,9 +426,8 @@ class ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ApplicationException", FALSE)) {
 /**
  * Base class for exceptions.
  * @package GoogleApiAdsAdWords
@@ -501,9 +498,8 @@ class ApplicationException {
     $this->message = $message;
     $this->ApplicationExceptionType = $ApplicationExceptionType;
   }
-}}
+}
 
-if (!class_exists("AuthenticationError", FALSE)) {
 /**
  * Errors returned when Authentication failed.
  * @package GoogleApiAdsAdWords
@@ -540,9 +536,8 @@ class AuthenticationError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("AuthorizationError", FALSE)) {
 /**
  * Errors encountered when trying to authorize a user.
  * @package GoogleApiAdsAdWords
@@ -579,9 +574,8 @@ class AuthorizationError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("BetaError", FALSE)) {
 /**
  * Errors that are thrown when a Beta feature is accessed incorrectly.
  * @package GoogleApiAdsAdWords
@@ -618,9 +612,8 @@ class BetaError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ClientTermsError", FALSE)) {
 /**
  * Error due to user not accepting the AdWords terms of service.
  * @package GoogleApiAdsAdWords
@@ -657,9 +650,8 @@ class ClientTermsError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ComparableValue", FALSE)) {
 /**
  * Comparable types for constructing ranges with.
  * @package GoogleApiAdsAdWords
@@ -723,9 +715,8 @@ class ComparableValue {
   public function __construct($ComparableValueType = NULL) {
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("DatabaseError", FALSE)) {
 /**
  * Errors that are thrown due to a database access problem.
  * @package GoogleApiAdsAdWords
@@ -762,9 +753,8 @@ class DatabaseError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("DateError", FALSE)) {
 /**
  * Errors associated with invalid dates and date ranges.
  * @package GoogleApiAdsAdWords
@@ -801,9 +791,8 @@ class DateError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("DateRange", FALSE)) {
 /**
  * Represents a range of dates that has either an upper or a lower bound.
  * The format for the date is YYYYMMDD.
@@ -843,9 +832,8 @@ class DateRange {
     $this->min = $min;
     $this->max = $max;
   }
-}}
+}
 
-if (!class_exists("DeprecatedAd", FALSE)) {
 /**
  * Represents a deprecated ad.
  * 
@@ -894,9 +882,8 @@ class DeprecatedAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("Dimensions", FALSE)) {
 /**
  * Represents a simple height-width dimension.
  * @package GoogleApiAdsAdWords
@@ -935,9 +922,8 @@ class Dimensions {
     $this->width = $width;
     $this->height = $height;
   }
-}}
+}
 
-if (!class_exists("DistinctError", FALSE)) {
 /**
  * Errors related to distinct ids or content.
  * @package GoogleApiAdsAdWords
@@ -974,9 +960,8 @@ class DistinctError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("EntityCountLimitExceeded", FALSE)) {
 /**
  * Signals that an entity count limit was exceeded for some level.
  * For example, too many criteria for a campaign.
@@ -1042,9 +1027,8 @@ class EntityCountLimitExceeded extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("EntityNotFound", FALSE)) {
 /**
  * An id did not correspond to an entity, or it referred to an entity which does not belong to the
  * customer.
@@ -1082,9 +1066,8 @@ class EntityNotFound extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ExemptionRequest", FALSE)) {
 /**
  * A request to be exempted from a {@link PolicyViolationError}.
  * @package GoogleApiAdsAdWords
@@ -1116,9 +1099,8 @@ class ExemptionRequest {
   public function __construct($key = NULL) {
     $this->key = $key;
   }
-}}
+}
 
-if (!class_exists("ForwardCompatibilityError", FALSE)) {
 /**
  * A ForwardComptibilityError represents possible errors when using the forwardCompatibilityMap
  * in some of the common services.
@@ -1156,9 +1138,8 @@ class ForwardCompatibilityError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("IdError", FALSE)) {
 /**
  * Errors associated with the ids.
  * @package GoogleApiAdsAdWords
@@ -1195,9 +1176,8 @@ class IdError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ImageAd", FALSE)) {
 /**
  * Represents an ImageAd.
  * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
@@ -1251,9 +1231,8 @@ class ImageAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("ImageError", FALSE)) {
 /**
  * Error class for errors associated with parsing image data.
  * @package GoogleApiAdsAdWords
@@ -1290,9 +1269,8 @@ class ImageError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("InternalApiError", FALSE)) {
 /**
  * Indicates that a server-side error has occured. {@code InternalApiError}s
  * are generally not the result of an invalid request or message sent by the
@@ -1331,9 +1309,8 @@ class InternalApiError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ListReturnValue", FALSE)) {
 /**
  * Base list return value type.
  * @package GoogleApiAdsAdWords
@@ -1397,9 +1374,8 @@ class ListReturnValue {
   public function __construct($ListReturnValueType = NULL) {
     $this->ListReturnValueType = $ListReturnValueType;
   }
-}}
+}
 
-if (!class_exists("Media", FALSE)) {
 /**
  * Represents some kind of media.
  * @package GoogleApiAdsAdWords
@@ -1533,9 +1509,8 @@ class Media {
     $this->creationTime = $creationTime;
     $this->MediaType = $MediaType;
   }
-}}
+}
 
-if (!class_exists("MediaError", FALSE)) {
 /**
  * Error class for media related errors.
  * @package GoogleApiAdsAdWords
@@ -1572,9 +1547,8 @@ class MediaError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("Media_Size_DimensionsMapEntry", FALSE)) {
 /**
  * This represents an entry in a map with a key of type Size
  * and value of type Dimensions.
@@ -1614,9 +1588,8 @@ class Media_Size_DimensionsMapEntry {
     $this->key = $key;
     $this->value = $value;
   }
-}}
+}
 
-if (!class_exists("Media_Size_StringMapEntry", FALSE)) {
 /**
  * This represents an entry in a map with a key of type Size
  * and value of type String.
@@ -1656,9 +1629,8 @@ class Media_Size_StringMapEntry {
     $this->key = $key;
     $this->value = $value;
   }
-}}
+}
 
-if (!class_exists("MobileAd", FALSE)) {
 /**
  * Represents a mobile ad.
  * 
@@ -1789,9 +1761,8 @@ class MobileAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("MobileImageAd", FALSE)) {
 /**
  * Represents a mobile image ad.
  * 
@@ -1849,9 +1820,8 @@ class MobileImageAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("Money", FALSE)) {
 /**
  * Represents a money amount.
  * @package GoogleApiAdsAdWords
@@ -1885,9 +1855,8 @@ class Money extends ComparableValue {
     $this->microAmount = $microAmount;
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("NewEntityCreationError", FALSE)) {
 /**
  * Error associated with creation of new entities using
  * {@link com.google.ads.api.services.common.id.TempId}s.
@@ -1925,9 +1894,8 @@ class NewEntityCreationError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("NotEmptyError", FALSE)) {
 /**
  * Errors corresponding with violation of a NOT EMPTY check.
  * @package GoogleApiAdsAdWords
@@ -1964,9 +1932,8 @@ class NotEmptyError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("NotWhitelistedError", FALSE)) {
 /**
  * Indicates that the customer is not whitelisted for accessing the API.
  * @package GoogleApiAdsAdWords
@@ -2003,9 +1970,8 @@ class NotWhitelistedError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("NullError", FALSE)) {
 /**
  * Errors associated with violation of a NOT NULL check.
  * @package GoogleApiAdsAdWords
@@ -2042,9 +2008,8 @@ class NullError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("NumberValue", FALSE)) {
 /**
  * Number value types for constructing number valued ranges.
  * @package GoogleApiAdsAdWords
@@ -2071,9 +2036,8 @@ class NumberValue extends ComparableValue {
     parent::__construct();
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("Operation", FALSE)) {
 /**
  * This represents an operation that includes an operator and an operand
  * specified type.
@@ -2145,9 +2109,8 @@ class Operation {
     $this->operator = $operator;
     $this->OperationType = $OperationType;
   }
-}}
+}
 
-if (!class_exists("OperationAccessDenied", FALSE)) {
 /**
  * Operation not permitted due to the invoked service's access policy.
  * @package GoogleApiAdsAdWords
@@ -2184,9 +2147,8 @@ class OperationAccessDenied extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("OrderBy", FALSE)) {
 /**
  * Specifies how the resulting information should be sorted.
  * @package GoogleApiAdsAdWords
@@ -2225,9 +2187,8 @@ class OrderBy {
     $this->field = $field;
     $this->sortOrder = $sortOrder;
   }
-}}
+}
 
-if (!class_exists("Page", FALSE)) {
 /**
  * Contains the results from a get call.
  * @package GoogleApiAdsAdWords
@@ -2298,9 +2259,8 @@ class Page {
     $this->totalNumEntries = $totalNumEntries;
     $this->PageType = $PageType;
   }
-}}
+}
 
-if (!class_exists("Paging", FALSE)) {
 /**
  * Specifies the page of results to return in the response. A page is specified
  * by the result position to start at and the maximum number of results to
@@ -2341,9 +2301,8 @@ class Paging {
     $this->startIndex = $startIndex;
     $this->numberResults = $numberResults;
   }
-}}
+}
 
-if (!class_exists("PagingError", FALSE)) {
 /**
  * Error codes for pagination.
  * See {@link com.google.ads.api.services.common.pagination.Paging}.
@@ -2381,9 +2340,8 @@ class PagingError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("PolicyViolationError", FALSE)) {
 /**
  * Represents violations of a single policy by some text in a field.
  * 
@@ -2466,9 +2424,8 @@ class PolicyViolationError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("PolicyViolationErrorPart", FALSE)) {
 /**
  * Points to a substring within an ad field or criterion.
  * @package GoogleApiAdsAdWords
@@ -2507,9 +2464,8 @@ class PolicyViolationErrorPart {
     $this->index = $index;
     $this->length = $length;
   }
-}}
+}
 
-if (!class_exists("PolicyViolationKey", FALSE)) {
 /**
  * Key of the violation. The key is used for referring to a violation when
  * filing an exemption request.
@@ -2549,9 +2505,8 @@ class PolicyViolationKey {
     $this->policyName = $policyName;
     $this->violatingText = $violatingText;
   }
-}}
+}
 
-if (!class_exists("Predicate", FALSE)) {
 /**
  * Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be filtered.
  * @package GoogleApiAdsAdWords
@@ -2597,9 +2552,8 @@ class Predicate {
     $this->operator = $operator;
     $this->values = $values;
   }
-}}
+}
 
-if (!class_exists("ProductAd", FALSE)) {
 /**
  * Represents a product ad (known as a <a href=
  * "//support.google.com/adwords/bin/answer.py?answer=2456103">product
@@ -2651,9 +2605,8 @@ class ProductAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("QueryError", FALSE)) {
 /**
  * A QueryError represents possible errors for query parsing and execution.
  * @package GoogleApiAdsAdWords
@@ -2697,9 +2650,8 @@ class QueryError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("QuotaCheckError", FALSE)) {
 /**
  * Encapsulates the errors thrown during developer quota checks.
  * @package GoogleApiAdsAdWords
@@ -2736,9 +2688,8 @@ class QuotaCheckError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RangeError", FALSE)) {
 /**
  * A list of all errors associated with the Range constraint.
  * @package GoogleApiAdsAdWords
@@ -2775,9 +2726,8 @@ class RangeError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RateExceededError", FALSE)) {
 /**
  * Signals that a call failed because a measured rate exceeded.
  * @package GoogleApiAdsAdWords
@@ -2835,9 +2785,8 @@ class RateExceededError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ReadOnlyError", FALSE)) {
 /**
  * Errors from attempting to write to read-only fields.
  * @package GoogleApiAdsAdWords
@@ -2874,9 +2823,8 @@ class ReadOnlyError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RequestError", FALSE)) {
 /**
  * Encapsulates the generic errors thrown when there's an error with user
  * request.
@@ -2914,9 +2862,8 @@ class RequestError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RequiredError", FALSE)) {
 /**
  * Errors due to missing required field.
  * @package GoogleApiAdsAdWords
@@ -2953,9 +2900,8 @@ class RequiredError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RichMediaAd", FALSE)) {
 /**
  * Data associated with a rich media ad.
  * <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>
@@ -3051,9 +2997,8 @@ class RichMediaAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("Selector", FALSE)) {
 /**
  * A generic selector to specify the type of information to return.
  * @package GoogleApiAdsAdWords
@@ -3113,9 +3058,8 @@ class Selector {
     $this->ordering = $ordering;
     $this->paging = $paging;
   }
-}}
+}
 
-if (!class_exists("SelectorError", FALSE)) {
 /**
  * Represents possible error codes for {@link Selector}.
  * @package GoogleApiAdsAdWords
@@ -3152,9 +3096,8 @@ class SelectorError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("SizeLimitError", FALSE)) {
 /**
  * Indicates that the number of entries in the request or response exceeds the system limit.
  * @package GoogleApiAdsAdWords
@@ -3191,9 +3134,8 @@ class SizeLimitError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("SoapRequestHeader", FALSE)) {
 /**
  * Defines the required and optional elements within the header of a SOAP request.
  * @package GoogleApiAdsAdWords
@@ -3260,9 +3202,8 @@ class SoapRequestHeader {
     $this->validateOnly = $validateOnly;
     $this->partialFailure = $partialFailure;
   }
-}}
+}
 
-if (!class_exists("SoapResponseHeader", FALSE)) {
 /**
  * Defines the elements within the header of a SOAP response.
  * @package GoogleApiAdsAdWords
@@ -3322,9 +3263,8 @@ class SoapResponseHeader {
     $this->operations = $operations;
     $this->responseTime = $responseTime;
   }
-}}
+}
 
-if (!class_exists("Stats", FALSE)) {
 /**
  * Statistics about an ad or criterion within an ad group or campaign.
  * @package GoogleApiAdsAdWords
@@ -3479,9 +3419,8 @@ class Stats {
     $this->totalBudget = $totalBudget;
     $this->StatsType = $StatsType;
   }
-}}
+}
 
-if (!class_exists("StatsQueryError", FALSE)) {
 /**
  * Represents possible error codes when querying for stats.
  * @package GoogleApiAdsAdWords
@@ -3518,9 +3457,8 @@ class StatsQueryError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("StringLengthError", FALSE)) {
 /**
  * Errors associated with the length of the given string being
  * out of bounds.
@@ -3558,9 +3496,8 @@ class StringLengthError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("String_StringMapEntry", FALSE)) {
 /**
  * This represents an entry in a map with a key of type String
  * and value of type String.
@@ -3600,9 +3537,8 @@ class String_StringMapEntry {
     $this->key = $key;
     $this->value = $value;
   }
-}}
+}
 
-if (!class_exists("TempAdUnionId", FALSE)) {
 /**
  * Represents the temporary id for an ad union id, which the user can specify.
  * The temporary id can be used to group ads together during ad creation.
@@ -3631,9 +3567,8 @@ class TempAdUnionId extends AdUnionId {
     $this->id = $id;
     $this->AdUnionIdType = $AdUnionIdType;
   }
-}}
+}
 
-if (!class_exists("TemplateAd", FALSE)) {
 /**
  * Represents a <a href=
  * "//www.google.com/adwords/displaynetwork/plan-creative-campaigns/display-ad-builder.html"
@@ -3713,9 +3648,8 @@ class TemplateAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("TemplateElement", FALSE)) {
 /**
  * Represents an element in a template. Each template element is composed
  * of a list of fields (actual value data).
@@ -3755,9 +3689,8 @@ class TemplateElement {
     $this->uniqueName = $uniqueName;
     $this->fields = $fields;
   }
-}}
+}
 
-if (!class_exists("TemplateElementField", FALSE)) {
 /**
  * Represents a field in a template element.
  * @package GoogleApiAdsAdWords
@@ -3810,9 +3743,8 @@ class TemplateElementField {
     $this->fieldText = $fieldText;
     $this->fieldMedia = $fieldMedia;
   }
-}}
+}
 
-if (!class_exists("TextAd", FALSE)) {
 /**
  * Represents a TextAd.
  * <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>
@@ -3866,9 +3798,8 @@ class TextAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("ThirdPartyRedirectAd", FALSE)) {
 /**
  * Data associated with rich media extension attributes.
  * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
@@ -3945,9 +3876,8 @@ class ThirdPartyRedirectAd extends RichMediaAd {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("Video", FALSE)) {
 /**
  * Encapsulates a Video media identified by a MediaId.
  * @package GoogleApiAdsAdWords
@@ -4026,9 +3956,8 @@ class Video extends Media {
     $this->creationTime = $creationTime;
     $this->MediaType = $MediaType;
   }
-}}
+}
 
-if (!class_exists("DynamicSearchAd", FALSE)) {
 /**
  * Represents a dynamic search ad. This ad will have its headline and
  * destination URL auto-generated at serving time according to domain name
@@ -4106,9 +4035,8 @@ class DynamicSearchAd extends Ad {
     $this->disapprovalReasons = $disapprovalReasons;
     $this->AdType = $AdType;
   }
-}}
+}
 
-if (!class_exists("AdErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -4133,9 +4061,8 @@ class AdErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AdGroupAdApprovalStatus", FALSE)) {
 /**
  * Represents the possible approval statuses.
  * @package GoogleApiAdsAdWords
@@ -4160,9 +4087,8 @@ class AdGroupAdApprovalStatus {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AdGroupAdStatus", FALSE)) {
 /**
  * The current status of an Ad.
  * @package GoogleApiAdsAdWords
@@ -4187,9 +4113,8 @@ class AdGroupAdStatus {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AdGroupAdErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -4214,9 +4139,8 @@ class AdGroupAdErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AdxErrorReason", FALSE)) {
 /**
  * The reasons for the AdX error.
  * @package GoogleApiAdsAdWords
@@ -4241,9 +4165,8 @@ class AdxErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AuthenticationErrorReason", FALSE)) {
 /**
  * The single reason for the authentication failure.
  * @package GoogleApiAdsAdWords
@@ -4268,9 +4191,8 @@ class AuthenticationErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AuthorizationErrorReason", FALSE)) {
 /**
  * The reasons for the database error.
  * @package GoogleApiAdsAdWords
@@ -4295,9 +4217,8 @@ class AuthorizationErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("BetaErrorReason", FALSE)) {
 /**
  * The reasons for the beta error.
  * @package GoogleApiAdsAdWords
@@ -4322,9 +4243,8 @@ class BetaErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ClientTermsErrorReason", FALSE)) {
 /**
  * Enums for the various reasons an error can be thrown as a result of
  * ClientTerms violation.
@@ -4350,9 +4270,8 @@ class ClientTermsErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("DatabaseErrorReason", FALSE)) {
 /**
  * The reasons for the database error.
  * @package GoogleApiAdsAdWords
@@ -4377,9 +4296,8 @@ class DatabaseErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("DateErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -4404,9 +4322,8 @@ class DateErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("DeprecatedAdType", FALSE)) {
 /**
  * Video ad.
  * @package GoogleApiAdsAdWords
@@ -4431,9 +4348,8 @@ class DeprecatedAdType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("DistinctErrorReason", FALSE)) {
 /**
  * The reasons for the validation error.
  * @package GoogleApiAdsAdWords
@@ -4458,9 +4374,8 @@ class DistinctErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("EntityCountLimitExceededReason", FALSE)) {
 /**
  * Limits at various levels of the account.
  * @package GoogleApiAdsAdWords
@@ -4485,9 +4400,8 @@ class EntityCountLimitExceededReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("EntityNotFoundReason", FALSE)) {
 /**
  * The specified id refered to an entity which either doesn't exist or is not accessible to the
  * customer. e.g. campaign belongs to another customer.
@@ -4513,9 +4427,8 @@ class EntityNotFoundReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ExperimentDataStatus", FALSE)) {
 /**
  * Status of the experimental change associated with an entity.
  * @package GoogleApiAdsAdWords
@@ -4540,9 +4453,8 @@ class ExperimentDataStatus {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ExperimentDeltaStatus", FALSE)) {
 /**
  * Status of an entity denoting its type of experimental change in a campaign.
  * @package GoogleApiAdsAdWords
@@ -4567,9 +4479,8 @@ class ExperimentDeltaStatus {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ForwardCompatibilityErrorReason", FALSE)) {
 /**
  * The reason for the error.
  * @package GoogleApiAdsAdWords
@@ -4594,9 +4505,8 @@ class ForwardCompatibilityErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("IdErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -4621,9 +4531,8 @@ class IdErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ImageErrorReason", FALSE)) {
 /**
  * The image is not valid.
  * @package GoogleApiAdsAdWords
@@ -4648,9 +4557,8 @@ class ImageErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("InternalApiErrorReason", FALSE)) {
 /**
  * The single reason for the internal API error.
  * @package GoogleApiAdsAdWords
@@ -4675,9 +4583,8 @@ class InternalApiErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("MarkupLanguageType", FALSE)) {
 /**
  * Markup languages to use for mobile ads.
  * @package GoogleApiAdsAdWords
@@ -4702,9 +4609,8 @@ class MarkupLanguageType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("MediaMediaType", FALSE)) {
 /**
  * Media types
  * @package GoogleApiAdsAdWords
@@ -4729,9 +4635,8 @@ class MediaMediaType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("MediaMimeType", FALSE)) {
 /**
  * Mime types
  * @package GoogleApiAdsAdWords
@@ -4756,9 +4661,8 @@ class MediaMimeType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("MediaSize", FALSE)) {
 /**
  * Sizes for retrieving the original media
  * @package GoogleApiAdsAdWords
@@ -4783,9 +4687,8 @@ class MediaSize {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("MediaErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -4810,9 +4713,8 @@ class MediaErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("NewEntityCreationErrorReason", FALSE)) {
 /**
  * Do not set the id field while creating new entities.
  * @package GoogleApiAdsAdWords
@@ -4837,9 +4739,8 @@ class NewEntityCreationErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("NotEmptyErrorReason", FALSE)) {
 /**
  * The reasons for the validation error.
  * @package GoogleApiAdsAdWords
@@ -4864,9 +4765,8 @@ class NotEmptyErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("NotWhitelistedErrorReason", FALSE)) {
 /**
  * The single reason for the whitelist error.
  * @package GoogleApiAdsAdWords
@@ -4891,9 +4791,8 @@ class NotWhitelistedErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("NullErrorReason", FALSE)) {
 /**
  * The reasons for the validation error.
  * @package GoogleApiAdsAdWords
@@ -4918,9 +4817,8 @@ class NullErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("OperationAccessDeniedReason", FALSE)) {
 /**
  * The reasons for the operation access error.
  * @package GoogleApiAdsAdWords
@@ -4945,9 +4843,8 @@ class OperationAccessDeniedReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("Operator", FALSE)) {
 /**
  * This represents an operator that may be presented to an adsapi service.
  * @package GoogleApiAdsAdWords
@@ -4972,9 +4869,8 @@ class Operator {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("PagingErrorReason", FALSE)) {
 /**
  * The reasons for errors when using pagination.
  * @package GoogleApiAdsAdWords
@@ -4999,9 +4895,8 @@ class PagingErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("PredicateOperator", FALSE)) {
 /**
  * Defines the valid set of operators.
  * @package GoogleApiAdsAdWords
@@ -5026,9 +4921,8 @@ class PredicateOperator {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("QueryErrorReason", FALSE)) {
 /**
  * The reason for the query error.
  * @package GoogleApiAdsAdWords
@@ -5053,9 +4947,8 @@ class QueryErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("QuotaCheckErrorReason", FALSE)) {
 /**
  * Enums for all the reasons an error can be thrown to the user during
  * billing quota checks.
@@ -5081,9 +4974,8 @@ class QuotaCheckErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RangeErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -5108,9 +5000,8 @@ class RangeErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RateExceededErrorReason", FALSE)) {
 /**
  * The reason for the rate exceeded error.
  * @package GoogleApiAdsAdWords
@@ -5135,9 +5026,8 @@ class RateExceededErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ReadOnlyErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -5162,9 +5052,8 @@ class ReadOnlyErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RequestErrorReason", FALSE)) {
 /**
  * Error reason is unknown.
  * @package GoogleApiAdsAdWords
@@ -5189,9 +5078,8 @@ class RequestErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RequiredErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -5216,9 +5104,8 @@ class RequiredErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RichMediaAdAdAttribute", FALSE)) {
 /**
  * A set of attributes that describe the rich media ad capabilities.
  * @package GoogleApiAdsAdWords
@@ -5243,9 +5130,8 @@ class RichMediaAdAdAttribute {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RichMediaAdRichMediaAdType", FALSE)) {
 /**
  * Different types of rich media ad that are available to customers.
  * @package GoogleApiAdsAdWords
@@ -5270,9 +5156,8 @@ class RichMediaAdRichMediaAdType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("SelectorErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -5297,9 +5182,8 @@ class SelectorErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("SizeLimitErrorReason", FALSE)) {
 /**
  * The reasons for Ad Scheduling errors.
  * @package GoogleApiAdsAdWords
@@ -5324,9 +5208,8 @@ class SizeLimitErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("SortOrder", FALSE)) {
 /**
  * Possible orders of sorting.
  * @package GoogleApiAdsAdWords
@@ -5351,9 +5234,8 @@ class SortOrder {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("StatsNetwork", FALSE)) {
 /**
  * Ad network.
  * @package GoogleApiAdsAdWords
@@ -5378,9 +5260,8 @@ class StatsNetwork {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("StatsQueryErrorReason", FALSE)) {
 /**
  * The reasons for errors when querying for stats.
  * @package GoogleApiAdsAdWords
@@ -5405,9 +5286,8 @@ class StatsQueryErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("StringLengthErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -5432,9 +5312,8 @@ class StringLengthErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("TemplateElementFieldType", FALSE)) {
 /**
  * Possible field types of template element fields.
  * @package GoogleApiAdsAdWords
@@ -5459,9 +5338,8 @@ class TemplateElementFieldType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ThirdPartyRedirectAdExpandingDirection", FALSE)) {
 /**
  * Allowed expanding directions for ads that are expandable.
  * @package GoogleApiAdsAdWords
@@ -5486,9 +5364,8 @@ class ThirdPartyRedirectAdExpandingDirection {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("VideoType", FALSE)) {
 /**
  * VideoType enum values that are permitted for video filterable
  * creative attribute IDs.
@@ -5514,9 +5391,8 @@ class VideoType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AdGroupAdServiceGet", FALSE)) {
 /**
  * <span class="constraint Required">This field is required and should not be {@code null}.</span>
  * 
@@ -5556,9 +5432,8 @@ class AdGroupAdServiceGet {
   public function __construct($serviceSelector = NULL) {
     $this->serviceSelector = $serviceSelector;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdServiceGetResponse", FALSE)) {
 /**
  * 
  * @package GoogleApiAdsAdWords
@@ -5590,9 +5465,8 @@ class AdGroupAdServiceGetResponse {
   public function __construct($rval = NULL) {
     $this->rval = $rval;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdServiceMutate", FALSE)) {
 /**
  * <span class="constraint ContentsNotNull">This field must not contain {@code null} elements.</span>
  * <span class="constraint DistinctIds">Elements in this field must have distinct IDs for following {@link Operator}s : SET, REMOVE.</span>
@@ -5651,9 +5525,8 @@ class AdGroupAdServiceMutate {
   public function __construct($operations = NULL) {
     $this->operations = $operations;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdServiceMutateResponse", FALSE)) {
 /**
  * 
  * @package GoogleApiAdsAdWords
@@ -5685,9 +5558,8 @@ class AdGroupAdServiceMutateResponse {
   public function __construct($rval = NULL) {
     $this->rval = $rval;
   }
-}}
+}
 
-if (!class_exists("query", FALSE)) {
 /**
  * <span class="constraint Required">This field is required and should not be {@code null}.</span>
  * 
@@ -5727,9 +5599,8 @@ class query {
   public function __construct($query = NULL) {
     $this->query = $query;
   }
-}}
+}
 
-if (!class_exists("queryResponse", FALSE)) {
 /**
  * 
  * @package GoogleApiAdsAdWords
@@ -5761,9 +5632,8 @@ class queryResponse {
   public function __construct($rval = NULL) {
     $this->rval = $rval;
   }
-}}
+}
 
-if (!class_exists("AdError", FALSE)) {
 /**
  * Base error class for Ad Service.
  * @package GoogleApiAdsAdWords
@@ -5800,9 +5670,8 @@ class AdError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("AdExtensionOverrideStats", FALSE)) {
 /**
  * Represents stats specific to AdExtensionOverrides.
  * @package GoogleApiAdsAdWords
@@ -5842,9 +5711,8 @@ class AdExtensionOverrideStats extends Stats {
     $this->totalBudget = $totalBudget;
     $this->StatsType = $StatsType;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdCountLimitExceeded", FALSE)) {
 /**
  * Indicates too many ads were added/enabled under the specified adgroup.
  * @package GoogleApiAdsAdWords
@@ -5879,9 +5747,8 @@ class AdGroupAdCountLimitExceeded extends EntityCountLimitExceeded {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdError", FALSE)) {
 /**
  * Error information for AdGroupAdService.
  * @package GoogleApiAdsAdWords
@@ -5918,9 +5785,8 @@ class AdGroupAdError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdOperation", FALSE)) {
 /**
  * AdGroupAd service operations.
  * @package GoogleApiAdsAdWords
@@ -5962,9 +5828,8 @@ class AdGroupAdOperation extends Operation {
     $this->operator = $operator;
     $this->OperationType = $OperationType;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdPage", FALSE)) {
 /**
  * Represents a page of {@link AdGroupAd}s resulting from the query done by
  * {@link AdGroupAdService}.
@@ -6000,9 +5865,8 @@ class AdGroupAdPage extends Page {
     $this->totalNumEntries = $totalNumEntries;
     $this->PageType = $PageType;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdReturnValue", FALSE)) {
 /**
  * A container for return values from the AdGroupAdService.
  * @package GoogleApiAdsAdWords
@@ -6043,9 +5907,8 @@ class AdGroupAdReturnValue extends ListReturnValue {
     $this->partialFailureErrors = $partialFailureErrors;
     $this->ListReturnValueType = $ListReturnValueType;
   }
-}}
+}
 
-if (!class_exists("AdStats", FALSE)) {
 /**
  * Represents stats specific to Ads.
  * @package GoogleApiAdsAdWords
@@ -6092,9 +5955,8 @@ class AdStats extends Stats {
     $this->totalBudget = $totalBudget;
     $this->StatsType = $StatsType;
   }
-}}
+}
 
-if (!class_exists("AdxError", FALSE)) {
 /**
  * Errors that are thrown when a non-AdX feature is accessed by an AdX customer.
  * @package GoogleApiAdsAdWords
@@ -6131,9 +5993,8 @@ class AdxError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ApiException", FALSE)) {
 /**
  * Exception class for holding a list of service errors.
  * @package GoogleApiAdsAdWords
@@ -6168,9 +6029,8 @@ class ApiException extends ApplicationException {
     $this->message = $message;
     $this->ApplicationExceptionType = $ApplicationExceptionType;
   }
-}}
+}
 
-if (!class_exists("Audio", FALSE)) {
 /**
  * Encapsulates an Audio media identified by a MediaId.
  * @package GoogleApiAdsAdWords
@@ -6228,9 +6088,8 @@ class Audio extends Media {
     $this->creationTime = $creationTime;
     $this->MediaType = $MediaType;
   }
-}}
+}
 
-if (!class_exists("DoubleValue", FALSE)) {
 /**
  * Number value type for constructing double valued ranges.
  * @package GoogleApiAdsAdWords
@@ -6264,9 +6123,8 @@ class DoubleValue extends NumberValue {
     $this->number = $number;
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("Image", FALSE)) {
 /**
  * Encapsulates an Image media. For {@code SET},{@code REMOVE} operations in
  * MediaService, use {@code mediaId}.
@@ -6311,9 +6169,8 @@ class Image extends Media {
     $this->creationTime = $creationTime;
     $this->MediaType = $MediaType;
   }
-}}
+}
 
-if (!class_exists("LongValue", FALSE)) {
 /**
  * Number value type for constructing long valued ranges.
  * @package GoogleApiAdsAdWords
@@ -6347,9 +6204,9 @@ class LongValue extends NumberValue {
     $this->number = $number;
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("AdGroupAdService", FALSE)) {
+
 /**
  * AdGroupAdService
  * @package GoogleApiAdsAdWords
@@ -6357,248 +6214,246 @@ if (!class_exists("AdGroupAdService", FALSE)) {
  * @author WSDLInterpreter
  */
 class AdGroupAdService extends AdWordsSoapClient {
-  /**
-   * Default class map for wsdl=>php
-   * @access private
-   * @var array
-   */
-  public static $classmap = array(
-    "getResponse" => "AdGroupAdServiceGetResponse",
-    "get" => "AdGroupAdServiceGet",
-    "mutate" => "AdGroupAdServiceMutate",
-    "mutateResponse" => "AdGroupAdServiceMutateResponse",
-    "DateTime" => "AdWordsDateTime",
-    "SoapHeader" => "SoapRequestHeader",
-    "Ad" => "Ad",
-    "AdError" => "AdError",
-    "ApiError" => "ApiError",
-    "AdExtensionOverrideStats" => "AdExtensionOverrideStats",
-    "Stats" => "Stats",
-    "AdGroupAd" => "AdGroupAd",
-    "AdGroupAdCountLimitExceeded" => "AdGroupAdCountLimitExceeded",
-    "EntityCountLimitExceeded" => "EntityCountLimitExceeded",
-    "AdGroupAdError" => "AdGroupAdError",
-    "AdGroupAdExperimentData" => "AdGroupAdExperimentData",
-    "AdGroupAdOperation" => "AdGroupAdOperation",
-    "Operation" => "Operation",
-    "AdGroupAdPage" => "AdGroupAdPage",
-    "Page" => "Page",
-    "AdGroupAdReturnValue" => "AdGroupAdReturnValue",
-    "ListReturnValue" => "ListReturnValue",
-    "AdStats" => "AdStats",
-    "AdUnionId" => "AdUnionId",
-    "AdxError" => "AdxError",
-    "ApiException" => "ApiException",
-    "ApplicationException" => "ApplicationException",
-    "Audio" => "Audio",
-    "Media" => "Media",
-    "AuthenticationError" => "AuthenticationError",
-    "AuthorizationError" => "AuthorizationError",
-    "BetaError" => "BetaError",
-    "ClientTermsError" => "ClientTermsError",
-    "ComparableValue" => "ComparableValue",
-    "DatabaseError" => "DatabaseError",
-    "DateError" => "DateError",
-    "DateRange" => "DateRange",
-    "DeprecatedAd" => "DeprecatedAd",
-    "Dimensions" => "Dimensions",
-    "DistinctError" => "DistinctError",
-    "DoubleValue" => "DoubleValue",
-    "NumberValue" => "NumberValue",
-    "EntityNotFound" => "EntityNotFound",
-    "ExemptionRequest" => "ExemptionRequest",
-    "ForwardCompatibilityError" => "ForwardCompatibilityError",
-    "IdError" => "IdError",
-    "Image" => "Image",
-    "ImageAd" => "ImageAd",
-    "ImageError" => "ImageError",
-    "InternalApiError" => "InternalApiError",
-    "LongValue" => "LongValue",
-    "MediaError" => "MediaError",
-    "Media_Size_DimensionsMapEntry" => "Media_Size_DimensionsMapEntry",
-    "Media_Size_StringMapEntry" => "Media_Size_StringMapEntry",
-    "MobileAd" => "MobileAd",
-    "MobileImageAd" => "MobileImageAd",
-    "Money" => "Money",
-    "NewEntityCreationError" => "NewEntityCreationError",
-    "NotEmptyError" => "NotEmptyError",
-    "NotWhitelistedError" => "NotWhitelistedError",
-    "NullError" => "NullError",
-    "OperationAccessDenied" => "OperationAccessDenied",
-    "OrderBy" => "OrderBy",
-    "Paging" => "Paging",
-    "PagingError" => "PagingError",
-    "PolicyViolationError" => "PolicyViolationError",
-    "PolicyViolationError.Part" => "PolicyViolationErrorPart",
-    "PolicyViolationKey" => "PolicyViolationKey",
-    "Predicate" => "Predicate",
-    "ProductAd" => "ProductAd",
-    "QueryError" => "QueryError",
-    "QuotaCheckError" => "QuotaCheckError",
-    "RangeError" => "RangeError",
-    "RateExceededError" => "RateExceededError",
-    "ReadOnlyError" => "ReadOnlyError",
-    "RequestError" => "RequestError",
-    "RequiredError" => "RequiredError",
-    "RichMediaAd" => "RichMediaAd",
-    "Selector" => "Selector",
-    "SelectorError" => "SelectorError",
-    "SizeLimitError" => "SizeLimitError",
-    "SoapResponseHeader" => "SoapResponseHeader",
-    "StatsQueryError" => "StatsQueryError",
-    "StringLengthError" => "StringLengthError",
-    "String_StringMapEntry" => "String_StringMapEntry",
-    "TempAdUnionId" => "TempAdUnionId",
-    "TemplateAd" => "TemplateAd",
-    "TemplateElement" => "TemplateElement",
-    "TemplateElementField" => "TemplateElementField",
-    "TextAd" => "TextAd",
-    "ThirdPartyRedirectAd" => "ThirdPartyRedirectAd",
-    "Video" => "Video",
-    "DynamicSearchAd" => "DynamicSearchAd",
-    "AdError.Reason" => "AdErrorReason",
-    "AdGroupAd.ApprovalStatus" => "AdGroupAdApprovalStatus",
-    "AdGroupAd.Status" => "AdGroupAdStatus",
-    "AdGroupAdError.Reason" => "AdGroupAdErrorReason",
-    "AdxError.Reason" => "AdxErrorReason",
-    "AuthenticationError.Reason" => "AuthenticationErrorReason",
-    "AuthorizationError.Reason" => "AuthorizationErrorReason",
-    "BetaError.Reason" => "BetaErrorReason",
-    "ClientTermsError.Reason" => "ClientTermsErrorReason",
-    "DatabaseError.Reason" => "DatabaseErrorReason",
-    "DateError.Reason" => "DateErrorReason",
-    "DeprecatedAd.Type" => "DeprecatedAdType",
-    "DistinctError.Reason" => "DistinctErrorReason",
-    "EntityCountLimitExceeded.Reason" => "EntityCountLimitExceededReason",
-    "EntityNotFound.Reason" => "EntityNotFoundReason",
-    "ExperimentDataStatus" => "ExperimentDataStatus",
-    "ExperimentDeltaStatus" => "ExperimentDeltaStatus",
-    "ForwardCompatibilityError.Reason" => "ForwardCompatibilityErrorReason",
-    "IdError.Reason" => "IdErrorReason",
-    "ImageError.Reason" => "ImageErrorReason",
-    "InternalApiError.Reason" => "InternalApiErrorReason",
-    "MarkupLanguageType" => "MarkupLanguageType",
-    "Media.MediaType" => "MediaMediaType",
-    "Media.MimeType" => "MediaMimeType",
-    "Media.Size" => "MediaSize",
-    "MediaError.Reason" => "MediaErrorReason",
-    "NewEntityCreationError.Reason" => "NewEntityCreationErrorReason",
-    "NotEmptyError.Reason" => "NotEmptyErrorReason",
-    "NotWhitelistedError.Reason" => "NotWhitelistedErrorReason",
-    "NullError.Reason" => "NullErrorReason",
-    "OperationAccessDenied.Reason" => "OperationAccessDeniedReason",
-    "Operator" => "Operator",
-    "PagingError.Reason" => "PagingErrorReason",
-    "Predicate.Operator" => "PredicateOperator",
-    "QueryError.Reason" => "QueryErrorReason",
-    "QuotaCheckError.Reason" => "QuotaCheckErrorReason",
-    "RangeError.Reason" => "RangeErrorReason",
-    "RateExceededError.Reason" => "RateExceededErrorReason",
-    "ReadOnlyError.Reason" => "ReadOnlyErrorReason",
-    "RequestError.Reason" => "RequestErrorReason",
-    "RequiredError.Reason" => "RequiredErrorReason",
-    "RichMediaAd.AdAttribute" => "RichMediaAdAdAttribute",
-    "RichMediaAd.RichMediaAdType" => "RichMediaAdRichMediaAdType",
-    "SelectorError.Reason" => "SelectorErrorReason",
-    "SizeLimitError.Reason" => "SizeLimitErrorReason",
-    "SortOrder" => "SortOrder",
-    "Stats.Network" => "StatsNetwork",
-    "StatsQueryError.Reason" => "StatsQueryErrorReason",
-    "StringLengthError.Reason" => "StringLengthErrorReason",
-    "TemplateElementField.Type" => "TemplateElementFieldType",
-    "ThirdPartyRedirectAd.ExpandingDirection" => "ThirdPartyRedirectAdExpandingDirection",
-    "VideoType" => "VideoType",
-    "query" => "query",
-    "queryResponse" => "queryResponse",
-  );
+	/**
+	 * Default class map for wsdl=>php
+	 * @access private
+	 * @var array
+	 */
+	public static $classmap = array(
+			"getResponse" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdServiceGetResponse",
+			"get" 							=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdServiceGet",
+			"mutate" 		 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdServiceMutate",
+			"mutateResponse" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdServiceMutateResponse",
+			"DateTime" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdWordsDateTime",
+			"SoapHeader" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\SoapRequestHeader",
+			"Ad" 							=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Ad",
+			"AdError" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdError",
+			"ApiError" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ApiError",
+			"AdExtensionOverrideStats" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdExtensionOverrideStats",
+			"Stats" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Stats",
+			"AdGroupAd" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAd",
+			"AdGroupAdCountLimitExceeded" 	=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdCountLimitExceeded",
+			"EntityCountLimitExceeded" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\EntityCountLimitExceeded",
+			"AdGroupAdError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdError",
+			"AdGroupAdExperimentData" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdExperimentData",
+			"AdGroupAdOperation"			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdOperation",
+			"Operation" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Operation",
+			"AdGroupAdPage" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdPage",
+			"Page" 							=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Page",
+			"AdGroupAdReturnValue" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdReturnValue",
+			"ListReturnValue"				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ListReturnValue",
+			"AdStats" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdStats",
+			"AdUnionId" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdUnionId",
+			"AdxError" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdxError",
+			"ApiException" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ApiException",
+			"ApplicationException" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ApplicationException",
+			"Audio" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Audio",
+			"Media" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Media",
+			"AuthenticationError" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AuthenticationError",
+			"AuthorizationError"			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AuthorizationError",
+			"BetaError" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\BetaError",
+			"ClientTermsError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ClientTermsError",
+			"ComparableValue" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ComparableValue",
+			"DatabaseError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DatabaseError",
+			"DateError" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DateError",
+			"DateRange" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DateRange",
+			"DeprecatedAd" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DeprecatedAd",
+			"Dimensions" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Dimensions",
+			"DistinctError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DistinctError",
+			"DoubleValue" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DoubleValue",
+			"NumberValue" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\NumberValue",
+			"EntityNotFound" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\EntityNotFound",
+			"ExemptionRequest" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ExemptionRequest",
+			"ForwardCompatibilityError" 	=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ForwardCompatibilityError",
+			"IdError"		 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\IdError",
+			"Image" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Image",
+			"ImageAd"		 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ImageAd",
+			"ImageError"			 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ImageError",
+			"InternalApiError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\InternalApiError",
+			"LongValue" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\LongValue",
+			"MediaError" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\MediaError",
+			"Media_Size_DimensionsMapEntry" => "\\Google\\Api\\Ads\\AdWords\\v201306\\Media_Size_DimensionsMapEntry",
+			"Media_Size_StringMapEntry" 	=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Media_Size_StringMapEntry",
+			"MobileAd" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\MobileAd",
+			"MobileImageAd" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\MobileImageAd",
+			"Money"						 	=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Money",
+			"NewEntityCreationError" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\NewEntityCreationError",
+			"NotEmptyError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\NotEmptyError",
+			"NotWhitelistedError" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\NotWhitelistedError",
+			"NullError" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\NullError",
+			"OperationAccessDenied" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\OperationAccessDenied",
+			"OrderBy" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\OrderBy",
+			"Paging" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Paging",
+			"PagingError" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\PagingError",
+			"PolicyViolationError" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\PolicyViolationError",
+			"PolicyViolationError.Part" 	=> "\\Google\\Api\\Ads\\AdWords\\v201306\\PolicyViolationErrorPart",
+			"PolicyViolationKey" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\PolicyViolationKey",
+			"Predicate" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Predicate",
+			"ProductAd" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ProductAd",
+			"QueryError" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\QueryError",
+			"QuotaCheckError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\QuotaCheckError",
+			"RangeError" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\RangeError",
+			"RateExceededError" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\RateExceededError",
+			"ReadOnlyError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ReadOnlyError",
+			"RequestError" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\RequestError",
+			"RequiredError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\RequiredError",
+			"RichMediaAd" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\RichMediaAd",
+			"Selector"				 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Selector",
+			"SelectorError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\SelectorError",
+			"SizeLimitError" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\SizeLimitError",
+			"SoapResponseHeader" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\SoapResponseHeader",
+			"StatsQueryError"	 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\StatsQueryError",
+			"StringLengthError" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\StringLengthError",
+			"String_StringMapEntry" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\String_StringMapEntry",
+			"TempAdUnionId" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\TempAdUnionId",
+			"TemplateAd" 					=> "\\Google\\Api\\Ads\\AdWords\\v201306\\TemplateAd",
+			"TemplateElement" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\TemplateElement",
+			"TemplateElementField" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\TemplateElementField",
+			"TextAd" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\TextAd",
+			"ThirdPartyRedirectAd" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ThirdPartyRedirectAd",
+			"Video" 						=> "\\Google\\Api\\Ads\\AdWords\\v201306\\Video",
+			"DynamicSearchAd" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DynamicSearchAd",
+			"AdError.Reason" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdErrorReason",
+			"AdGroupAd.ApprovalStatus" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdApprovalStatus",
+			"AdGroupAd.Status" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdStatus",
+			"AdGroupAdError.Reason" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdGroupAdErrorReason",
+			"AdxError.Reason" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AdxErrorReason",
+			"AuthenticationError.Reason" 	=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AuthenticationErrorReason",
+			"AuthorizationError.Reason" 	=> "\\Google\\Api\\Ads\\AdWords\\v201306\\AuthorizationErrorReason",
+			"BetaError.Reason" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\BetaErrorReason",
+			"ClientTermsError.Reason" 		=> "\\Google\\Api\\Ads\\AdWords\\v201306\\ClientTermsErrorReason",
+			"DatabaseError.Reason" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DatabaseErrorReason",
+			"DateError.Reason" 				=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DateErrorReason",
+			"DeprecatedAd.Type" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DeprecatedAdType",
+			"DistinctError.Reason" 			=> "\\Google\\Api\\Ads\\AdWords\\v201306\\DistinctErrorReason",
+			"EntityCountLimitExceeded.Reason"  => "\\Google\\Api\\Ads\\AdWords\\v201306\\EntityCountLimitExceededReason",
+			"EntityNotFound.Reason"			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\EntityNotFoundReason",
+			"ExperimentDataStatus" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\ExperimentDataStatus",
+			"ExperimentDeltaStatus" 		   => "\\Google\\Api\\Ads\\AdWords\\v201306\\ExperimentDeltaStatus",
+			"ForwardCompatibilityError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201306\\ForwardCompatibilityErrorReason",
+			"IdError.Reason" 				   => "\\Google\\Api\\Ads\\AdWords\\v201306\\IdErrorReason",
+			"ImageError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\ImageErrorReason",
+			"InternalApiError.Reason" 		   => "\\Google\\Api\\Ads\\AdWords\\v201306\\InternalApiErrorReason",
+			"MarkupLanguageType" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\MarkupLanguageType",
+			"Media.MediaType" 				   => "\\Google\\Api\\Ads\\AdWords\\v201306\\MediaMediaType",
+			"Media.MimeType" 				   => "\\Google\\Api\\Ads\\AdWords\\v201306\\MediaMimeType",
+			"Media.Size" 					   => "\\Google\\Api\\Ads\\AdWords\\v201306\\MediaSize",
+			"MediaError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\MediaErrorReason",
+			"NewEntityCreationError.Reason"    => "\\Google\\Api\\Ads\\AdWords\\v201306\\NewEntityCreationErrorReason",
+			"NotEmptyError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\NotEmptyErrorReason",
+			"NotWhitelistedError.Reason" 	   => "\\Google\\Api\\Ads\\AdWords\\v201306\\NotWhitelistedErrorReason",
+			"NullError.Reason" 				   => "\\Google\\Api\\Ads\\AdWords\\v201306\\NullErrorReason",
+			"OperationAccessDenied.Reason" 	   => "\\Google\\Api\\Ads\\AdWords\\v201306\\OperationAccessDeniedReason",
+			"Operator" 						   => "\\Google\\Api\\Ads\\AdWords\\v201306\\Operator",
+			"PagingError.Reason"			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\PagingErrorReason",
+			"Predicate.Operator" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\PredicateOperator",
+			"QueryError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\QueryErrorReason",
+			"QuotaCheckError.Reason" 		   => "\\Google\\Api\\Ads\\AdWords\\v201306\\QuotaCheckErrorReason",
+			"RangeError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\RangeErrorReason",
+			"RateExceededError.Reason" 		   => "\\Google\\Api\\Ads\\AdWords\\v201306\\RateExceededErrorReason",
+			"ReadOnlyError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\ReadOnlyErrorReason",
+			"RequestError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\RequestErrorReason",
+			"RequiredError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\RequiredErrorReason",
+			"RichMediaAd.AdAttribute" 		   => "\\Google\\Api\\Ads\\AdWords\\v201306\\RichMediaAdAdAttribute",
+			"RichMediaAd.RichMediaAdType" 	   => "\\Google\\Api\\Ads\\AdWords\\v201306\\RichMediaAdRichMediaAdType",
+			"SelectorError.Reason" 			   => "\\Google\\Api\\Ads\\AdWords\\v201306\\SelectorErrorReason",
+			"SizeLimitError.Reason" 		   => "\\Google\\Api\\Ads\\AdWords\\v201306\\SizeLimitErrorReason",
+			"SortOrder" 					   => "\\Google\\Api\\Ads\\AdWords\\v201306\\SortOrder",
+			"Stats.Network" 				   => "\\Google\\Api\\Ads\\AdWords\\v201306\\StatsNetwork",
+			"StatsQueryError.Reason" 		   => "\\Google\\Api\\Ads\\AdWords\\v201306\\StatsQueryErrorReason",
+			"StringLengthError.Reason" 		   => "\\Google\\Api\\Ads\\AdWords\\v201306\\StringLengthErrorReason",
+			"TemplateElementField.Type" 	   => "\\Google\\Api\\Ads\\AdWords\\v201306\\TemplateElementFieldType",
+			"ThirdPartyRedirectAd.ExpandingDirection" => "\\Google\\Api\\Ads\\AdWords\\v201306\\ThirdPartyRedirectAdExpandingDirection",
+			"VideoType"						   => "\\Google\\Api\\Ads\\AdWords\\v201306\\VideoType",
+			"query" 						   => "\\Google\\Api\\Ads\\AdWords\\v201306\\query",
+			"queryResponse" 				   => "\\Google\\Api\\Ads\\AdWords\\v201306\\queryResponse",
+	);
 
-  /**
-   * The endpoint of the service
-   * @var string
-   */
-  public static $endpoint = "https://adwords.google.com/api/adwords/cm/v201306/AdGroupAdService";
+	/**
+	 * The endpoint of the service
+	 * @var string
+	*/
+	public static $endpoint = "https://adwords.google.com/api/adwords/cm/v201306/AdGroupAdService";
 
-  /**
-   * Constructor using wsdl location and options array
-   * @param string $wsdl WSDL location for this service
-   * @param array $options Options for the SoapClient
-   */
-  public function __construct($wsdl=null, $options, $user) {
-    $options["classmap"] = AdGroupAdService::$classmap;
-    parent::__construct($wsdl, $options, $user, 'AdGroupAdService', 'https://adwords.google.com/api/adwords/cm/v201306');
-  }
+	/**
+	 * Constructor using wsdl location and options array
+	 * @param string $wsdl WSDL location for this service
+	 * @param array $options Options for the SoapClient
+	 */
+	public function __construct($wsdl=null, $options, $user) {
+		$options["classmap"] = AdGroupAdService::$classmap;
+		parent::__construct($wsdl, $options, $user, 'AdGroupAdService', 'https://adwords.google.com/api/adwords/cm/v201306');
+	}
 
-  /**
-   * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-   * 
-   * 
-   * 
-   * Returns a list of AdGroupAds.
-   * 
-   * @param serviceSelector The selector specifying the {@link AdGroupAd}s to return.
-   * @return The page containing the AdGroupAds that meet the criteria specified by the selector.
-   * @throws ApiException when there is at least one error with the request.
-   */
-  public function get($serviceSelector) {
-    $arg = new AdGroupAdServiceGet($serviceSelector);
-    $result = $this->__soapCall("get", array($arg));
-    return $result->rval;
-  }
-
-
-  /**
-   * <span class="constraint ContentsNotNull">This field must not contain {@code null} elements.</span>
-   * <span class="constraint DistinctIds">Elements in this field must have distinct IDs for following {@link Operator}s : SET, REMOVE.</span>
-   * <span class="constraint NotEmpty">This field must contain at least one element.</span>
-   * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-   * 
-   * 
-   * 
-   * Applies the list of mutate operations (ie. add, set, remove):
-   * <p>Add - Creates a new {@linkplain AdGroupAd ad group ad}. The
-   * {@code adGroupId} must
-   * reference an existing ad group. The child {@code Ad} must be sufficiently
-   * specified by constructing a concrete ad type (such as {@code TextAd})
-   * and setting its fields accordingly.</p>
-   * <p>Set - Updates an ad group ad. Except for {@code status},
-   * ad group ad fields are not mutable. Status updates are
-   * straightforward - the status of the ad group ad is updated as
-   * specified. If any other field has changed, it will be ignored. If
-   * you want to change any of the fields other than status, you must
-   * make a new ad and then delete the old one.</p>
-   * <p>Remove - Removes the link between the specified AdGroup and
-   * Ad.</p>
-   * @param operations The operations to apply.
-   * @return A list of AdGroupAds where each entry in the list is the result of
-   * applying the operation in the input list with the same index. For an
-   * add/set operation, the return AdGroupAd will be what is saved to the db.
-   * In the case of the remove operation, the return AdGroupAd will simply be
-   * an AdGroupAd containing an Ad with the id set to the Ad being deleted from
-   * the AdGroup.
-   */
-  public function mutate($operations) {
-    $arg = new AdGroupAdServiceMutate($operations);
-    $result = $this->__soapCall("mutate", array($arg));
-    return $result->rval;
-  }
+	/**
+	 * <span class="constraint Required">This field is required and should not be {@code null}.</span>
+	 *
+	 *
+	 *
+	 * Returns a list of AdGroupAds.
+	 *
+	 * @param serviceSelector The selector specifying the {@link AdGroupAd}s to return.
+	 * @return The page containing the AdGroupAds that meet the criteria specified by the selector.
+	 * @throws ApiException when there is at least one error with the request.
+	 */
+	public function get($serviceSelector) {
+		$arg = new AdGroupAdServiceGet($serviceSelector);
+		$result = $this->__soapCall("get", array($arg));
+		return $result->rval;
+	}
 
 
-  /**
-   * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-   * 
-   * 
-   * 
-   * Returns a list of AdGroupAds based on the query.
-   * 
-   * @param query The SQL-like AWQL query string.
-   * @return A list of AdGroupAds.
-   * @throws ApiException if problems occur while parsing the query or fetching AdGroupAds.
-   */
-  public function query($query) {
-    $arg = new query($query);
-    $result = $this->__soapCall("query", array($arg));
-    return $result->rval;
-  }
+	/**
+	 * <span class="constraint ContentsNotNull">This field must not contain {@code null} elements.</span>
+	 * <span class="constraint DistinctIds">Elements in this field must have distinct IDs for following {@link Operator}s : SET, REMOVE.</span>
+	 * <span class="constraint NotEmpty">This field must contain at least one element.</span>
+	 * <span class="constraint Required">This field is required and should not be {@code null}.</span>
+	 *
+	 *
+	 *
+	 * Applies the list of mutate operations (ie. add, set, remove):
+	 * <p>Add - Creates a new {@linkplain AdGroupAd ad group ad}. The
+	 * {@code adGroupId} must
+	 * reference an existing ad group. The child {@code Ad} must be sufficiently
+	 * specified by constructing a concrete ad type (such as {@code TextAd})
+	 * and setting its fields accordingly.</p>
+	 * <p>Set - Updates an ad group ad. Except for {@code status},
+	 * ad group ad fields are not mutable. Status updates are
+	 * straightforward - the status of the ad group ad is updated as
+	 * specified. If any other field has changed, it will be ignored. If
+	 * you want to change any of the fields other than status, you must
+	 * make a new ad and then delete the old one.</p>
+	 * <p>Remove - Removes the link between the specified AdGroup and
+	 * Ad.</p>
+	 * @param operations The operations to apply.
+	 * @return A list of AdGroupAds where each entry in the list is the result of
+	 * applying the operation in the input list with the same index. For an
+	 * add/set operation, the return AdGroupAd will be what is saved to the db.
+	 * In the case of the remove operation, the return AdGroupAd will simply be
+	 * an AdGroupAd containing an Ad with the id set to the Ad being deleted from
+	 * the AdGroup.
+	 */
+	public function mutate($operations) {
+		$arg = new AdGroupAdServiceMutate($operations);
+		$result = $this->__soapCall("mutate", array($arg));
+		return $result->rval;
+	}
 
 
-}}
+	/**
+	 * <span class="constraint Required">This field is required and should not be {@code null}.</span>
+	 *
+	 *
+	 *
+	 * Returns a list of AdGroupAds based on the query.
+	 *
+	 * @param query The SQL-like AWQL query string.
+	 * @return A list of AdGroupAds.
+	 * @throws ApiException if problems occur while parsing the query or fetching AdGroupAds.
+	 */
+	public function query($query) {
+		$arg = new query($query);
+		$result = $this->__soapCall("query", array($arg));
+		return $result->rval;
+	}
+}

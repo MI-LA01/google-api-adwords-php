@@ -27,13 +27,17 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/UrlUtils.php';
 
 /**
  * An abstract class for Google OAuth2 flow.
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
+
+namespace Google\Api\Ads\Common\Util;
+
+use \Google\Api\Ads\Common\Util\UrlUtils;
+
 abstract class OAuth2Handler {
   /**
    * The refresh buffer of 60 seconds.
@@ -271,7 +275,7 @@ abstract class OAuth2Handler {
 /**
  * Exception thrown when OAuth2 flow fails.
  */
-class OAuth2Exception extends Exception {
+class OAuth2Exception extends \Exception {
   public function __construct($message, $code = NULL) {
     parent::__construct($message, $code);
   }

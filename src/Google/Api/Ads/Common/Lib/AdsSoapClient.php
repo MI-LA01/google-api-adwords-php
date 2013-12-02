@@ -30,12 +30,16 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Lib/AdsUser.php';
-require_once 'Google/Api/Ads/Common/Util/Logger.php';
-require_once 'Google/Api/Ads/Common/Util/MapUtils.php';
-require_once 'Google/Api/Ads/Common/Util/SoapRequestXmlFixer.php';
-require_once 'Google/Api/Ads/Common/Util/XmlUtils.php';
-require_once 'Google/Api/Ads/Common/Util/DeprecationUtils.php';
+
+namespace Google\Api\Ads\Common\Lib;
+
+use \Google\Api\Ads\Common\Lib\AdsUser,
+	\Google\Api\Ads\Common\Util\Logger,
+	\Google\Api\Ads\Common\Util\MapUtils,
+	\Google\Api\Ads\Common\Util\SoapRequestXmlFixer,
+	\Google\Api\Ads\Common\Util\XmlUtils,
+	\Google\Api\Ads\Common\Util\DeprecationUtils,
+	\ReflectionClass;
 
 /**
  * An extension of the {@link SoapClient} class intended to prepare
@@ -44,7 +48,7 @@ require_once 'Google/Api/Ads/Common/Util/DeprecationUtils.php';
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-abstract class AdsSoapClient extends SoapClient {
+abstract class AdsSoapClient extends \SoapClient {
   /**
    * The SoapClient options used to construct this class.
    * @var array
@@ -212,8 +216,9 @@ abstract class AdsSoapClient extends SoapClient {
       $input_headers[] = $this->GenerateSoapHeader();
       $this->lastHeaders = $input_headers;
       $this->lastArguments = $arguments;
-      $response = parent::__soapCall($function_name, $arguments, $options,
-          $input_headers, $output_headers);
+      
+      $response = parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers );
+      
       $this->ProcessResponse($this->lastRequest,
           $this->__getLastResponse(), $function_name);
       return $response;
@@ -524,10 +529,10 @@ abstract class AdsSoapClient extends SoapClient {
     // Convert longs more intelligently, due to overflow issue in 32 bit
     // environments.
     $typemaps[] = array(
-        'type_ns' => 'http://www.w3.org/2001/XMLSchema',
+        'type_ns'   => 'http://www.w3.org/2001/XMLSchema',
         'type_name' => 'long',
-        'from_xml' => 'AdsSoapClient::TypemapLongFromXml',
-        'to_xml' => 'AdsSoapClient::TypemapLongToXml');
+        'from_xml'  => '\\Google\\Api\\Ads\\Common\\Lib\\AdsSoapClient::TypemapLongFromXml',
+        'to_xml' 	=> '\\Google\\Api\\Ads\\Common\\Lib\\AdsSoapClient::TypemapLongToXml');
     return $typemaps;
   }
 

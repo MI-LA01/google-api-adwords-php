@@ -28,8 +28,9 @@
  * @see        AdsSoapClient
  */
 
-/** Required classes. **/
-require_once dirname(__FILE__) . '/../../Common/Lib/AdsSoapClient.php';
+namespace Google\Api\Ads\AdWords\Lib;
+
+use \Google\Api\Ads\Common\Lib\AdsSoapClient;
 
 /**
  * An extension of the {@link AdsSoapClient} for the AdWords API.
@@ -47,7 +48,7 @@ class AdWordsSoapClient extends AdsSoapClient {
    *     call
    * @param string $serviceNamespace the namespace of the service
    */
-  public function __construct($wsdl, array $options, AdsUser $user,
+  public function __construct($wsdl, array $options, AdWordsUser $user,
       $serviceName, $serviceNamespace) {
     parent::__construct($wsdl, $options, $user, $serviceName,
         $serviceNamespace);
@@ -86,7 +87,7 @@ class AdWordsSoapClient extends AdsSoapClient {
     foreach (get_object_vars($headerObject) as $var => $value) {
       $headerObject->$var = $this->GetHeaderValue($var);
     }
-    return new SoapHeader($this->serviceNamespace, 'RequestHeader',
+    return new \SoapHeader($this->serviceNamespace, 'RequestHeader',
         $headerObject, FALSE);
   }
 

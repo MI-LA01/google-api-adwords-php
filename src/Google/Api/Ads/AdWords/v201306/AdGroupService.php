@@ -28,9 +28,11 @@
  */
 
 /** Required classes. **/
-require_once "Google/Api/Ads/AdWords/Lib/AdWordsSoapClient.php";
 
-if (!class_exists("DateRange", FALSE)) {
+namespace Google\Api\Ads\AdWords\v201306;
+
+use \Google\Api\Ads\AdWords\Lib\AdWordsSoapClient;
+
 /**
  * Represents a range of dates that has either an upper or a lower bound.
  * The format for the date is YYYYMMDD.
@@ -70,9 +72,8 @@ class DateRange {
     $this->min = $min;
     $this->max = $max;
   }
-}}
+}
 
-if (!class_exists("OrderBy", FALSE)) {
 /**
  * Specifies how the resulting information should be sorted.
  * @package GoogleApiAdsAdWords
@@ -111,9 +112,8 @@ class OrderBy {
     $this->field = $field;
     $this->sortOrder = $sortOrder;
   }
-}}
+}
 
-if (!class_exists("Paging", FALSE)) {
 /**
  * Specifies the page of results to return in the response. A page is specified
  * by the result position to start at and the maximum number of results to
@@ -154,9 +154,8 @@ class Paging {
     $this->startIndex = $startIndex;
     $this->numberResults = $numberResults;
   }
-}}
+}
 
-if (!class_exists("Predicate", FALSE)) {
 /**
  * Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be filtered.
  * @package GoogleApiAdsAdWords
@@ -202,9 +201,8 @@ class Predicate {
     $this->operator = $operator;
     $this->values = $values;
   }
-}}
+}
 
-if (!class_exists("SoapRequestHeader", FALSE)) {
 /**
  * Defines the required and optional elements within the header of a SOAP request.
  * @package GoogleApiAdsAdWords
@@ -271,9 +269,8 @@ class SoapRequestHeader {
     $this->validateOnly = $validateOnly;
     $this->partialFailure = $partialFailure;
   }
-}}
+}
 
-if (!class_exists("SoapResponseHeader", FALSE)) {
 /**
  * Defines the elements within the header of a SOAP response.
  * @package GoogleApiAdsAdWords
@@ -333,9 +330,8 @@ class SoapResponseHeader {
     $this->operations = $operations;
     $this->responseTime = $responseTime;
   }
-}}
+}
 
-if (!class_exists("String_StringMapEntry", FALSE)) {
 /**
  * This represents an entry in a map with a key of type String
  * and value of type String.
@@ -375,9 +371,8 @@ class String_StringMapEntry {
     $this->key = $key;
     $this->value = $value;
   }
-}}
+}
 
-if (!class_exists("TargetingSettingDetail", FALSE)) {
 /**
  * Specifies if criteria of this type group should be used to restrict
  * targeting, or if ads can serve anywhere and criteria are only used in
@@ -418,9 +413,8 @@ class TargetingSettingDetail {
     $this->criterionTypeGroup = $criterionTypeGroup;
     $this->targetAll = $targetAll;
   }
-}}
+}
 
-if (!class_exists("ComparableValue", FALSE)) {
 /**
  * Comparable types for constructing ranges with.
  * @package GoogleApiAdsAdWords
@@ -484,9 +478,8 @@ class ComparableValue {
   public function __construct($ComparableValueType = NULL) {
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("Setting", FALSE)) {
 /**
  * Base type for AdWords campaign settings.
  * @package GoogleApiAdsAdWords
@@ -550,9 +543,8 @@ class Setting {
   public function __construct($SettingType = NULL) {
     $this->SettingType = $SettingType;
   }
-}}
+}
 
-if (!class_exists("Stats", FALSE)) {
 /**
  * Statistics about an ad or criterion within an ad group or campaign.
  * @package GoogleApiAdsAdWords
@@ -707,9 +699,8 @@ class Stats {
     $this->totalBudget = $totalBudget;
     $this->StatsType = $StatsType;
   }
-}}
+}
 
-if (!class_exists("ApiError", FALSE)) {
 /**
  * The API error base class that provides details about an error that occurred
  * while processing a service request.
@@ -798,9 +789,8 @@ class ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ApplicationException", FALSE)) {
 /**
  * Base class for exceptions.
  * @package GoogleApiAdsAdWords
@@ -871,9 +861,8 @@ class ApplicationException {
     $this->message = $message;
     $this->ApplicationExceptionType = $ApplicationExceptionType;
   }
-}}
+}
 
-if (!class_exists("Bid", FALSE)) {
 /**
  * Represents a bid of a certain amount.
  * @package GoogleApiAdsAdWords
@@ -905,9 +894,8 @@ class Bid {
   public function __construct($amount = NULL) {
     $this->amount = $amount;
   }
-}}
+}
 
-if (!class_exists("BidMultiplier", FALSE)) {
 /**
  * Represents a multiplier to modify a bid. The final value after
  * modification is represented by the multiplied bid value.
@@ -947,9 +935,8 @@ class BidMultiplier {
     $this->multiplier = $multiplier;
     $this->multipliedBid = $multipliedBid;
   }
-}}
+}
 
-if (!class_exists("Bids", FALSE)) {
 /**
  * Base class for all bids.
  * @package GoogleApiAdsAdWords
@@ -1013,9 +1000,8 @@ class Bids {
   public function __construct($BidsType = NULL) {
     $this->BidsType = $BidsType;
   }
-}}
+}
 
-if (!class_exists("Selector", FALSE)) {
 /**
  * A generic selector to specify the type of information to return.
  * @package GoogleApiAdsAdWords
@@ -1075,9 +1061,8 @@ class Selector {
     $this->ordering = $ordering;
     $this->paging = $paging;
   }
-}}
+}
 
-if (!class_exists("AdGroupExperimentBidMultipliers", FALSE)) {
 /**
  * Bid multiplier used to modify the bid of an adgroup while running
  * an experiment.
@@ -1143,9 +1128,8 @@ class AdGroupExperimentBidMultipliers {
   public function __construct($AdGroupExperimentBidMultipliersType = NULL) {
     $this->AdGroupExperimentBidMultipliersType = $AdGroupExperimentBidMultipliersType;
   }
-}}
+}
 
-if (!class_exists("AdGroupExperimentData", FALSE)) {
 /**
  * Data associated with an advertiser experiment for this adgroup.
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
@@ -1199,9 +1183,8 @@ class AdGroupExperimentData {
     $this->experimentDataStatus = $experimentDataStatus;
     $this->experimentBidMultipliers = $experimentBidMultipliers;
   }
-}}
+}
 
-if (!class_exists("BiddingScheme", FALSE)) {
 /**
  * Base class for all bidding schemes.
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
@@ -1266,9 +1249,8 @@ class BiddingScheme {
   public function __construct($BiddingSchemeType = NULL) {
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("BiddingStrategyConfiguration", FALSE)) {
 /**
  * Encapsulates the information about bids and bidding strategies.
  * 
@@ -1353,9 +1335,8 @@ class BiddingStrategyConfiguration {
     $this->biddingScheme = $biddingScheme;
     $this->bids = $bids;
   }
-}}
+}
 
-if (!class_exists("AdGroup", FALSE)) {
 /**
  * Represents an ad group.
  * @package GoogleApiAdsAdWords
@@ -1457,9 +1438,8 @@ class AdGroup {
     $this->biddingStrategyConfiguration = $biddingStrategyConfiguration;
     $this->contentBidCriterionTypeGroup = $contentBidCriterionTypeGroup;
   }
-}}
+}
 
-if (!class_exists("ListReturnValue", FALSE)) {
 /**
  * Base list return value type.
  * @package GoogleApiAdsAdWords
@@ -1523,9 +1503,8 @@ class ListReturnValue {
   public function __construct($ListReturnValueType = NULL) {
     $this->ListReturnValueType = $ListReturnValueType;
   }
-}}
+}
 
-if (!class_exists("Operation", FALSE)) {
 /**
  * This represents an operation that includes an operator and an operand
  * specified type.
@@ -1597,9 +1576,8 @@ class Operation {
     $this->operator = $operator;
     $this->OperationType = $OperationType;
   }
-}}
+}
 
-if (!class_exists("Page", FALSE)) {
 /**
  * Contains the results from a get call.
  * @package GoogleApiAdsAdWords
@@ -1670,9 +1648,8 @@ class Page {
     $this->totalNumEntries = $totalNumEntries;
     $this->PageType = $PageType;
   }
-}}
+}
 
-if (!class_exists("AdGroupServiceErrorReason", FALSE)) {
 /**
  * The reasons for the adgroup service error.
  * @package GoogleApiAdsAdWords
@@ -1697,9 +1674,8 @@ class AdGroupServiceErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AdGroupStatus", FALSE)) {
 /**
  * Status of this ad group.
  * @package GoogleApiAdsAdWords
@@ -1724,9 +1700,8 @@ class AdGroupStatus {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AdxErrorReason", FALSE)) {
 /**
  * The reasons for the AdX error.
  * @package GoogleApiAdsAdWords
@@ -1751,9 +1726,8 @@ class AdxErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AuthenticationErrorReason", FALSE)) {
 /**
  * The single reason for the authentication failure.
  * @package GoogleApiAdsAdWords
@@ -1778,9 +1752,8 @@ class AuthenticationErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AuthorizationErrorReason", FALSE)) {
 /**
  * The reasons for the database error.
  * @package GoogleApiAdsAdWords
@@ -1805,9 +1778,8 @@ class AuthorizationErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("BetaErrorReason", FALSE)) {
 /**
  * The reasons for the beta error.
  * @package GoogleApiAdsAdWords
@@ -1832,9 +1804,8 @@ class BetaErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("BidSource", FALSE)) {
 /**
  * Indicate where a criterion's bid came from: criterion or the adgroup it
  * belongs to.
@@ -1860,9 +1831,8 @@ class BidSource {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("BiddingErrorReason", FALSE)) {
 /**
  * Reason for bidding error.
  * @package GoogleApiAdsAdWords
@@ -1887,9 +1857,8 @@ class BiddingErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("BiddingErrorsReason", FALSE)) {
 /**
  * Bidding strategy is available for enhanced campaign only.
  * <span class="constraint Beta">This is a beta feature.</span>
@@ -1915,9 +1884,8 @@ class BiddingErrorsReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("BiddingStrategySource", FALSE)) {
 /**
  * Indicates where bidding strategy came from: campaign, adgroup or criterion.
  * @package GoogleApiAdsAdWords
@@ -1942,9 +1910,8 @@ class BiddingStrategySource {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("BiddingStrategyType", FALSE)) {
 /**
  * The bidding strategy type.
  * @package GoogleApiAdsAdWords
@@ -1969,9 +1936,8 @@ class BiddingStrategyType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ClientTermsErrorReason", FALSE)) {
 /**
  * Enums for the various reasons an error can be thrown as a result of
  * ClientTerms violation.
@@ -1997,9 +1963,8 @@ class ClientTermsErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ConversionOptimizerBiddingSchemeBidType", FALSE)) {
 /**
  * Average cost-per-acquisition (targetCPA) bid type.
  * @package GoogleApiAdsAdWords
@@ -2024,9 +1989,8 @@ class ConversionOptimizerBiddingSchemeBidType {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ConversionOptimizerBiddingSchemePricingMode", FALSE)) {
 /**
  * 
  * @package GoogleApiAdsAdWords
@@ -2051,9 +2015,8 @@ class ConversionOptimizerBiddingSchemePricingMode {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("CriterionTypeGroup", FALSE)) {
 /**
  * The list of groupings of criteria types.
  * @package GoogleApiAdsAdWords
@@ -2078,9 +2041,8 @@ class CriterionTypeGroup {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("DatabaseErrorReason", FALSE)) {
 /**
  * The reasons for the database error.
  * @package GoogleApiAdsAdWords
@@ -2105,9 +2067,8 @@ class DatabaseErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("DateErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -2132,9 +2093,8 @@ class DateErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("DistinctErrorReason", FALSE)) {
 /**
  * The reasons for the validation error.
  * @package GoogleApiAdsAdWords
@@ -2159,9 +2119,8 @@ class DistinctErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("EntityCountLimitExceededReason", FALSE)) {
 /**
  * Limits at various levels of the account.
  * @package GoogleApiAdsAdWords
@@ -2186,9 +2145,8 @@ class EntityCountLimitExceededReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("EntityNotFoundReason", FALSE)) {
 /**
  * The specified id refered to an entity which either doesn't exist or is not accessible to the
  * customer. e.g. campaign belongs to another customer.
@@ -2214,9 +2172,8 @@ class EntityNotFoundReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ExperimentDataStatus", FALSE)) {
 /**
  * Status of the experimental change associated with an entity.
  * @package GoogleApiAdsAdWords
@@ -2241,9 +2198,8 @@ class ExperimentDataStatus {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ExperimentDeltaStatus", FALSE)) {
 /**
  * Status of an entity denoting its type of experimental change in a campaign.
  * @package GoogleApiAdsAdWords
@@ -2268,9 +2224,8 @@ class ExperimentDeltaStatus {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ForwardCompatibilityErrorReason", FALSE)) {
 /**
  * The reason for the error.
  * @package GoogleApiAdsAdWords
@@ -2295,9 +2250,8 @@ class ForwardCompatibilityErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("IdErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -2322,9 +2276,8 @@ class IdErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("InternalApiErrorReason", FALSE)) {
 /**
  * The single reason for the internal API error.
  * @package GoogleApiAdsAdWords
@@ -2349,9 +2302,8 @@ class InternalApiErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("NewEntityCreationErrorReason", FALSE)) {
 /**
  * Do not set the id field while creating new entities.
  * @package GoogleApiAdsAdWords
@@ -2376,9 +2328,8 @@ class NewEntityCreationErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("NotEmptyErrorReason", FALSE)) {
 /**
  * The reasons for the validation error.
  * @package GoogleApiAdsAdWords
@@ -2403,9 +2354,8 @@ class NotEmptyErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("NotWhitelistedErrorReason", FALSE)) {
 /**
  * The single reason for the whitelist error.
  * @package GoogleApiAdsAdWords
@@ -2430,9 +2380,8 @@ class NotWhitelistedErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("NullErrorReason", FALSE)) {
 /**
  * The reasons for the validation error.
  * @package GoogleApiAdsAdWords
@@ -2457,9 +2406,8 @@ class NullErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("OperationAccessDeniedReason", FALSE)) {
 /**
  * The reasons for the operation access error.
  * @package GoogleApiAdsAdWords
@@ -2484,9 +2432,8 @@ class OperationAccessDeniedReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("Operator", FALSE)) {
 /**
  * This represents an operator that may be presented to an adsapi service.
  * @package GoogleApiAdsAdWords
@@ -2511,9 +2458,8 @@ class Operator {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("OperatorErrorReason", FALSE)) {
 /**
  * The reasons for the validation error.
  * @package GoogleApiAdsAdWords
@@ -2538,9 +2484,8 @@ class OperatorErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("PageOnePromotedBiddingSchemeStrategyGoal", FALSE)) {
 /**
  * 
  * @package GoogleApiAdsAdWords
@@ -2565,9 +2510,8 @@ class PageOnePromotedBiddingSchemeStrategyGoal {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("PredicateOperator", FALSE)) {
 /**
  * Defines the valid set of operators.
  * @package GoogleApiAdsAdWords
@@ -2592,9 +2536,8 @@ class PredicateOperator {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("QueryErrorReason", FALSE)) {
 /**
  * The reason for the query error.
  * @package GoogleApiAdsAdWords
@@ -2619,9 +2562,8 @@ class QueryErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("QuotaCheckErrorReason", FALSE)) {
 /**
  * Enums for all the reasons an error can be thrown to the user during
  * billing quota checks.
@@ -2647,9 +2589,8 @@ class QuotaCheckErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("QuotaErrorReason", FALSE)) {
 /**
  * The reasons for the quota error.
  * @package GoogleApiAdsAdWords
@@ -2674,9 +2615,8 @@ class QuotaErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RangeErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -2701,9 +2641,8 @@ class RangeErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RateExceededErrorReason", FALSE)) {
 /**
  * The reason for the rate exceeded error.
  * @package GoogleApiAdsAdWords
@@ -2728,9 +2667,8 @@ class RateExceededErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("ReadOnlyErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -2755,9 +2693,8 @@ class ReadOnlyErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RejectedErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -2782,9 +2719,8 @@ class RejectedErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RequestErrorReason", FALSE)) {
 /**
  * Error reason is unknown.
  * @package GoogleApiAdsAdWords
@@ -2809,9 +2745,8 @@ class RequestErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("RequiredErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -2836,9 +2771,8 @@ class RequiredErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("SelectorErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -2863,9 +2797,8 @@ class SelectorErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("SettingErrorReason", FALSE)) {
 /**
  * The reasons for the setting error.
  * @package GoogleApiAdsAdWords
@@ -2890,9 +2823,8 @@ class SettingErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("SizeLimitErrorReason", FALSE)) {
 /**
  * The reasons for Ad Scheduling errors.
  * @package GoogleApiAdsAdWords
@@ -2917,9 +2849,8 @@ class SizeLimitErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("SortOrder", FALSE)) {
 /**
  * Possible orders of sorting.
  * @package GoogleApiAdsAdWords
@@ -2944,9 +2875,8 @@ class SortOrder {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("StatsNetwork", FALSE)) {
 /**
  * Ad network.
  * @package GoogleApiAdsAdWords
@@ -2971,9 +2901,8 @@ class StatsNetwork {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("StatsQueryErrorReason", FALSE)) {
 /**
  * The reasons for errors when querying for stats.
  * @package GoogleApiAdsAdWords
@@ -2998,9 +2927,8 @@ class StatsQueryErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("StringLengthErrorReason", FALSE)) {
 /**
  * The reasons for the target error.
  * @package GoogleApiAdsAdWords
@@ -3025,9 +2953,8 @@ class StringLengthErrorReason {
 
   public function __construct() {
   }
-}}
+}
 
-if (!class_exists("AdGroupServiceGet", FALSE)) {
 /**
  * <span class="constraint Required">This field is required and should not be {@code null}.</span>
  * 
@@ -3068,9 +2995,8 @@ class AdGroupServiceGet {
   public function __construct($serviceSelector = NULL) {
     $this->serviceSelector = $serviceSelector;
   }
-}}
+}
 
-if (!class_exists("AdGroupServiceGetResponse", FALSE)) {
 /**
  * 
  * @package GoogleApiAdsAdWords
@@ -3102,9 +3028,8 @@ class AdGroupServiceGetResponse {
   public function __construct($rval = NULL) {
     $this->rval = $rval;
   }
-}}
+}
 
-if (!class_exists("AdGroupServiceMutate", FALSE)) {
 /**
  * <span class="constraint ContentsNotNull">This field must not contain {@code null} elements.</span>
  * <span class="constraint DistinctIds">Elements in this field must have distinct IDs for following {@link Operator}s : SET, REMOVE.</span>
@@ -3151,9 +3076,8 @@ class AdGroupServiceMutate {
   public function __construct($operations = NULL) {
     $this->operations = $operations;
   }
-}}
+}
 
-if (!class_exists("AdGroupServiceMutateResponse", FALSE)) {
 /**
  * 
  * @package GoogleApiAdsAdWords
@@ -3185,9 +3109,8 @@ class AdGroupServiceMutateResponse {
   public function __construct($rval = NULL) {
     $this->rval = $rval;
   }
-}}
+}
 
-if (!class_exists("query", FALSE)) {
 /**
  * <span class="constraint Required">This field is required and should not be {@code null}.</span>
  * 
@@ -3227,9 +3150,8 @@ class query {
   public function __construct($query = NULL) {
     $this->query = $query;
   }
-}}
+}
 
-if (!class_exists("queryResponse", FALSE)) {
 /**
  * 
  * @package GoogleApiAdsAdWords
@@ -3261,9 +3183,8 @@ class queryResponse {
   public function __construct($rval = NULL) {
     $this->rval = $rval;
   }
-}}
+}
 
-if (!class_exists("AdGroupServiceError", FALSE)) {
 /**
  * Represents possible error codes in AdGroupService.
  * @package GoogleApiAdsAdWords
@@ -3307,9 +3228,8 @@ class AdGroupServiceError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("AdxError", FALSE)) {
 /**
  * Errors that are thrown when a non-AdX feature is accessed by an AdX customer.
  * @package GoogleApiAdsAdWords
@@ -3346,9 +3266,8 @@ class AdxError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("AuthenticationError", FALSE)) {
 /**
  * Errors returned when Authentication failed.
  * @package GoogleApiAdsAdWords
@@ -3385,9 +3304,8 @@ class AuthenticationError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("AuthorizationError", FALSE)) {
 /**
  * Errors encountered when trying to authorize a user.
  * @package GoogleApiAdsAdWords
@@ -3424,9 +3342,8 @@ class AuthorizationError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("BetaError", FALSE)) {
 /**
  * Errors that are thrown when a Beta feature is accessed incorrectly.
  * @package GoogleApiAdsAdWords
@@ -3463,9 +3380,8 @@ class BetaError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("BiddingError", FALSE)) {
 /**
  * Represents bidding errors.
  * @package GoogleApiAdsAdWords
@@ -3502,9 +3418,8 @@ class BiddingError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("BiddingErrors", FALSE)) {
 /**
  * Represents error codes for bidding strategy entities.
  * @package GoogleApiAdsAdWords
@@ -3541,9 +3456,8 @@ class BiddingErrors extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ClientTermsError", FALSE)) {
 /**
  * Error due to user not accepting the AdWords terms of service.
  * @package GoogleApiAdsAdWords
@@ -3580,9 +3494,8 @@ class ClientTermsError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ConversionOptimizerBiddingScheme", FALSE)) {
 /**
  * Conversion optimizer bidding strategy helps you maximize your return on investment
  * (ROI) by automatically getting you the most possible conversions for your budget.
@@ -3637,9 +3550,8 @@ class ConversionOptimizerBiddingScheme extends BiddingScheme {
     $this->bidType = $bidType;
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("DateError", FALSE)) {
 /**
  * Errors associated with invalid dates and date ranges.
  * @package GoogleApiAdsAdWords
@@ -3676,9 +3588,8 @@ class DateError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("DistinctError", FALSE)) {
 /**
  * Errors related to distinct ids or content.
  * @package GoogleApiAdsAdWords
@@ -3715,9 +3626,8 @@ class DistinctError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("EnhancedCpcBiddingScheme", FALSE)) {
 /**
  * Enhanced CPC is a bidding strategy that raises your bids for clicks that seem more likely to
  * lead to a conversion and lowers them for clicks where they seem less likely.
@@ -3749,9 +3659,8 @@ class EnhancedCpcBiddingScheme extends BiddingScheme {
     parent::__construct();
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("EntityCountLimitExceeded", FALSE)) {
 /**
  * Signals that an entity count limit was exceeded for some level.
  * For example, too many criteria for a campaign.
@@ -3817,9 +3726,8 @@ class EntityCountLimitExceeded extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("EntityNotFound", FALSE)) {
 /**
  * An id did not correspond to an entity, or it referred to an entity which does not belong to the
  * customer.
@@ -3857,9 +3765,8 @@ class EntityNotFound extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ForwardCompatibilityError", FALSE)) {
 /**
  * A ForwardComptibilityError represents possible errors when using the forwardCompatibilityMap
  * in some of the common services.
@@ -3897,9 +3804,8 @@ class ForwardCompatibilityError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("IdError", FALSE)) {
 /**
  * Errors associated with the ids.
  * @package GoogleApiAdsAdWords
@@ -3936,9 +3842,8 @@ class IdError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("InternalApiError", FALSE)) {
 /**
  * Indicates that a server-side error has occured. {@code InternalApiError}s
  * are generally not the result of an invalid request or message sent by the
@@ -3977,9 +3882,8 @@ class InternalApiError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ManualCpcBiddingScheme", FALSE)) {
 /**
  * Manual click based bidding where user pays per click.
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
@@ -4014,9 +3918,8 @@ class ManualCpcBiddingScheme extends BiddingScheme {
     $this->enhancedCpcEnabled = $enhancedCpcEnabled;
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("ManualCpmBiddingScheme", FALSE)) {
 /**
  * Manual impression based bidding where user pays per thousand impressions.
  * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
@@ -4044,9 +3947,8 @@ class ManualCpmBiddingScheme extends BiddingScheme {
     parent::__construct();
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("Money", FALSE)) {
 /**
  * Represents a money amount.
  * @package GoogleApiAdsAdWords
@@ -4080,9 +3982,8 @@ class Money extends ComparableValue {
     $this->microAmount = $microAmount;
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("NewEntityCreationError", FALSE)) {
 /**
  * Error associated with creation of new entities using
  * {@link com.google.ads.api.services.common.id.TempId}s.
@@ -4120,9 +4021,8 @@ class NewEntityCreationError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("NotEmptyError", FALSE)) {
 /**
  * Errors corresponding with violation of a NOT EMPTY check.
  * @package GoogleApiAdsAdWords
@@ -4159,9 +4059,8 @@ class NotEmptyError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("NotWhitelistedError", FALSE)) {
 /**
  * Indicates that the customer is not whitelisted for accessing the API.
  * @package GoogleApiAdsAdWords
@@ -4198,9 +4097,8 @@ class NotWhitelistedError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("NullError", FALSE)) {
 /**
  * Errors associated with violation of a NOT NULL check.
  * @package GoogleApiAdsAdWords
@@ -4237,9 +4135,8 @@ class NullError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("NumberValue", FALSE)) {
 /**
  * Number value types for constructing number valued ranges.
  * @package GoogleApiAdsAdWords
@@ -4266,9 +4163,8 @@ class NumberValue extends ComparableValue {
     parent::__construct();
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("OperationAccessDenied", FALSE)) {
 /**
  * Operation not permitted due to the invoked service's access policy.
  * @package GoogleApiAdsAdWords
@@ -4305,9 +4201,8 @@ class OperationAccessDenied extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("OperatorError", FALSE)) {
 /**
  * Errors due to the use of unsupported operations.
  * @package GoogleApiAdsAdWords
@@ -4344,9 +4239,8 @@ class OperatorError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("PercentCpaBid", FALSE)) {
 /**
  * Percentage CPA based bidding where user pays a percent of conversions.
  * @package GoogleApiAdsAdWords
@@ -4387,9 +4281,8 @@ class PercentCpaBid extends Bids {
     $this->percentCpaBidSource = $percentCpaBidSource;
     $this->BidsType = $BidsType;
   }
-}}
+}
 
-if (!class_exists("PercentCpaBiddingScheme", FALSE)) {
 /**
  * Percentage CPA based bidding scheme attributes where user pays a percent of conversions.
  * This bidding strategy is available only to some advertisers.
@@ -4422,9 +4315,8 @@ class PercentCpaBiddingScheme extends BiddingScheme {
     parent::__construct();
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("QueryError", FALSE)) {
 /**
  * A QueryError represents possible errors for query parsing and execution.
  * @package GoogleApiAdsAdWords
@@ -4468,9 +4360,8 @@ class QueryError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("QuotaCheckError", FALSE)) {
 /**
  * Encapsulates the errors thrown during developer quota checks.
  * @package GoogleApiAdsAdWords
@@ -4507,9 +4398,8 @@ class QuotaCheckError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("QuotaError", FALSE)) {
 /**
  * Errors that are thrown if a quota limit is exceeded.
  * @package GoogleApiAdsAdWords
@@ -4553,9 +4443,8 @@ class QuotaError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RangeError", FALSE)) {
 /**
  * A list of all errors associated with the Range constraint.
  * @package GoogleApiAdsAdWords
@@ -4592,9 +4481,8 @@ class RangeError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RateExceededError", FALSE)) {
 /**
  * Signals that a call failed because a measured rate exceeded.
  * @package GoogleApiAdsAdWords
@@ -4652,9 +4540,8 @@ class RateExceededError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("ReadOnlyError", FALSE)) {
 /**
  * Errors from attempting to write to read-only fields.
  * @package GoogleApiAdsAdWords
@@ -4691,9 +4578,8 @@ class ReadOnlyError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RejectedError", FALSE)) {
 /**
  * Indicates that a field was rejected due to compatibility issues.
  * @package GoogleApiAdsAdWords
@@ -4730,9 +4616,8 @@ class RejectedError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RequestError", FALSE)) {
 /**
  * Encapsulates the generic errors thrown when there's an error with user
  * request.
@@ -4770,9 +4655,8 @@ class RequestError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("RequiredError", FALSE)) {
 /**
  * Errors due to missing required field.
  * @package GoogleApiAdsAdWords
@@ -4809,9 +4693,8 @@ class RequiredError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("SelectorError", FALSE)) {
 /**
  * Represents possible error codes for {@link Selector}.
  * @package GoogleApiAdsAdWords
@@ -4848,9 +4731,8 @@ class SelectorError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("SettingError", FALSE)) {
 /**
  * Indicates a problem with campaign settings.
  * @package GoogleApiAdsAdWords
@@ -4887,9 +4769,8 @@ class SettingError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("SizeLimitError", FALSE)) {
 /**
  * Indicates that the number of entries in the request or response exceeds the system limit.
  * @package GoogleApiAdsAdWords
@@ -4926,9 +4807,8 @@ class SizeLimitError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("StatsQueryError", FALSE)) {
 /**
  * Represents possible error codes when querying for stats.
  * @package GoogleApiAdsAdWords
@@ -4965,9 +4845,8 @@ class StatsQueryError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("StringLengthError", FALSE)) {
 /**
  * Errors associated with the length of the given string being
  * out of bounds.
@@ -5005,9 +4884,8 @@ class StringLengthError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("TargetingSetting", FALSE)) {
 /**
  * Setting for targeting related features.
  * This is applicable at Campaign and AdGroup level.
@@ -5042,9 +4920,8 @@ class TargetingSetting extends Setting {
     $this->details = $details;
     $this->SettingType = $SettingType;
   }
-}}
+}
 
-if (!class_exists("CpaBid", FALSE)) {
 /**
  * CPA Bids.
  * @package GoogleApiAdsAdWords
@@ -5078,9 +4955,8 @@ class CpaBid extends Bids {
     $this->bid = $bid;
     $this->BidsType = $BidsType;
   }
-}}
+}
 
-if (!class_exists("CpcBid", FALSE)) {
 /**
  * Manual click based bids.
  * @package GoogleApiAdsAdWords
@@ -5128,9 +5004,8 @@ class CpcBid extends Bids {
     $this->cpcBidSource = $cpcBidSource;
     $this->BidsType = $BidsType;
   }
-}}
+}
 
-if (!class_exists("CpmBid", FALSE)) {
 /**
  * Manual impression based bids.
  * @package GoogleApiAdsAdWords
@@ -5171,9 +5046,8 @@ class CpmBid extends Bids {
     $this->cpmBidSource = $cpmBidSource;
     $this->BidsType = $BidsType;
   }
-}}
+}
 
-if (!class_exists("DatabaseError", FALSE)) {
 /**
  * Errors that are thrown due to a database access problem.
  * @package GoogleApiAdsAdWords
@@ -5210,9 +5084,8 @@ class DatabaseError extends ApiError {
     $this->errorString = $errorString;
     $this->ApiErrorType = $ApiErrorType;
   }
-}}
+}
 
-if (!class_exists("PageOnePromotedBiddingScheme", FALSE)) {
 /**
  * Page-One Promoted bidding scheme, which sets max cpc bids to
  * target impressions on page one or page one promoted slots on google.com.
@@ -5284,9 +5157,8 @@ class PageOnePromotedBiddingScheme extends BiddingScheme {
     $this->raiseBidWhenLowQualityScore = $raiseBidWhenLowQualityScore;
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("TargetCpaBiddingScheme", FALSE)) {
 /**
  * Target Cpa bidding strategy helps you maximize your return on investment
  * (ROI) by automatically getting you the most possible conversions for your budget.
@@ -5332,9 +5204,8 @@ class TargetCpaBiddingScheme extends BiddingScheme {
     $this->targetCpa = $targetCpa;
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("TargetSpendBiddingScheme", FALSE)) {
 /**
  * Target Spend bidding scheme, in which Google automatically places
  * bids for the user based on their daily/monthly budget or optional
@@ -5379,9 +5250,8 @@ class TargetSpendBiddingScheme extends BiddingScheme {
     $this->spendTarget = $spendTarget;
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("ApiException", FALSE)) {
 /**
  * Exception class for holding a list of service errors.
  * @package GoogleApiAdsAdWords
@@ -5416,9 +5286,8 @@ class ApiException extends ApplicationException {
     $this->message = $message;
     $this->ApplicationExceptionType = $ApplicationExceptionType;
   }
-}}
+}
 
-if (!class_exists("BudgetOptimizerBiddingScheme", FALSE)) {
 /**
  * In budget optimizer, Google automatically places bids for the user based on
  * their daily/monthly budget.
@@ -5461,9 +5330,8 @@ class BudgetOptimizerBiddingScheme extends BiddingScheme {
     $this->enhancedCpcEnabled = $enhancedCpcEnabled;
     $this->BiddingSchemeType = $BiddingSchemeType;
   }
-}}
+}
 
-if (!class_exists("ManualCPCAdGroupExperimentBidMultipliers", FALSE)) {
 /**
  * Adgroup level bid multipliers used in manual CPC bidding strategies.
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
@@ -5505,9 +5373,8 @@ class ManualCPCAdGroupExperimentBidMultipliers extends AdGroupExperimentBidMulti
     $this->maxContentCpcMultiplier = $maxContentCpcMultiplier;
     $this->AdGroupExperimentBidMultipliersType = $AdGroupExperimentBidMultipliersType;
   }
-}}
+}
 
-if (!class_exists("ManualCPMAdGroupExperimentBidMultipliers", FALSE)) {
 /**
  * Adgroup level bid multipliers used in manual CPM bidding strategy.
  * <span class="constraint AdxEnabled">This is disabled for AdX.</span>
@@ -5542,9 +5409,8 @@ class ManualCPMAdGroupExperimentBidMultipliers extends AdGroupExperimentBidMulti
     $this->maxCpmMultiplier = $maxCpmMultiplier;
     $this->AdGroupExperimentBidMultipliersType = $AdGroupExperimentBidMultipliersType;
   }
-}}
+}
 
-if (!class_exists("AdGroupOperation", FALSE)) {
 /**
  * AdGroup operations for adding/updating/removing adgroups.
  * @package GoogleApiAdsAdWords
@@ -5579,9 +5445,8 @@ class AdGroupOperation extends Operation {
     $this->operator = $operator;
     $this->OperationType = $OperationType;
   }
-}}
+}
 
-if (!class_exists("AdGroupPage", FALSE)) {
 /**
  * Contains a subset of adgroup resulting from the filtering and paging of the
  * {@link com.google.ads.api.services.campaignmgmt.adgroup.AdGroupService#get} call
@@ -5617,9 +5482,8 @@ class AdGroupPage extends Page {
     $this->totalNumEntries = $totalNumEntries;
     $this->PageType = $PageType;
   }
-}}
+}
 
-if (!class_exists("AdGroupReturnValue", FALSE)) {
 /**
  * A container for return values from the AdGroupService.
  * @package GoogleApiAdsAdWords
@@ -5660,9 +5524,8 @@ class AdGroupReturnValue extends ListReturnValue {
     $this->partialFailureErrors = $partialFailureErrors;
     $this->ListReturnValueType = $ListReturnValueType;
   }
-}}
+}
 
-if (!class_exists("DoubleValue", FALSE)) {
 /**
  * Number value type for constructing double valued ranges.
  * @package GoogleApiAdsAdWords
@@ -5696,9 +5559,8 @@ class DoubleValue extends NumberValue {
     $this->number = $number;
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("LongValue", FALSE)) {
 /**
  * Number value type for constructing long valued ranges.
  * @package GoogleApiAdsAdWords
@@ -5732,9 +5594,8 @@ class LongValue extends NumberValue {
     $this->number = $number;
     $this->ComparableValueType = $ComparableValueType;
   }
-}}
+}
 
-if (!class_exists("AdGroupService", FALSE)) {
 /**
  * AdGroupService
  * @package GoogleApiAdsAdWords
@@ -5968,6 +5829,4 @@ class AdGroupService extends AdWordsSoapClient {
     $result = $this->__soapCall("query", array($arg));
     return $result->rval;
   }
-
-
-}}
+}

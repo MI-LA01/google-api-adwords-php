@@ -23,10 +23,12 @@
  * @author     Eric Koleda <api.ekoleda@gmail.com>
  * @author     Vincent Tsao <api.vtsao@gmail.com>
  */
-require_once dirname(__FILE__) . '/../Lib/AdWordsUser.php';
-require_once dirname(__FILE__) . '/../../Common/Util/CurlUtils.php';
-require_once dirname(__FILE__) . '/../../Common/Util/Logger.php';
-require_once dirname(__FILE__) . '/../../Common/Util/XmlUtils.php';
+namespace Google\Api\Ads\AdWords\Util;
+
+use \Google\Api\Ads\AdWords\Lib\AdWordsUser,
+	\Google\Api\Ads\Common\Util\CurlUtils,
+	\Google\Api\Ads\Common\Util\Logger,
+	\Google\Api\Ads\Common\Util\XmlUtils;
 
 /**
  * A collection of utility methods for working with reports.
@@ -366,7 +368,7 @@ class ReportUtils {
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class ReportDownloadException extends Exception {
+class ReportDownloadException extends \Exception {
   /**
    * Constructor for ReportDownloadException.
    * @param string $error an optional error message

@@ -34,7 +34,10 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class AuthTokenException extends Exception {
+
+namespace Google\Api\Ads\Common\Util;
+
+class AuthTokenException extends \Exception {
   private $error;
   private $url;
   private $captchaToken;

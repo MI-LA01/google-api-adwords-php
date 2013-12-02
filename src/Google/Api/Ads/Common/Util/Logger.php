@@ -45,6 +45,9 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
+
+namespace Google\Api\Ads\Common\Util;
+
 class Logger {
   /**
    * Logs all incomming and outgoing SOAP XML.

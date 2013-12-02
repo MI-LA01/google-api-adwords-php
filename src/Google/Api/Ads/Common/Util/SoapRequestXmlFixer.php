@@ -29,7 +29,10 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/XmlUtils.php';
+namespace Google\Api\Ads\Common\Util;
+
+use \Google\Api\Ads\Common\Util\XmlUtils,
+    \DOMXPath;
 
 /**
  * The SOAP XML request fixer used to fix some inconsistencies among the
@@ -100,8 +103,8 @@ class SoapRequestXmlFixer {
    * @param array $objects the objects array matching <var>$nodeList</var>
    * @param DOMXPath $xpath the xpath object representing the DOM
    */
-  private function FixXmlNodes(DOMNodeList $nodeList, array $objects,
-      DOMXPath $xpath) {
+  private function FixXmlNodes(\DOMNodeList $nodeList, array $objects,
+      \DOMXPath $xpath) {
     if ($nodeList->length == sizeof($objects)) {
       $i = 0;
       foreach ($objects as $object) {
@@ -117,7 +120,7 @@ class SoapRequestXmlFixer {
    * @param mixed $object the object matching <var>$node</var>
    * @param DOMXPath $xpath the xpath object representing the DOM
    */
-  private function FixXmlNode(DOMNode $node, $object, DOMXPath $xpath) {
+  private function FixXmlNode(\DOMNode $node, $object, \DOMXPath $xpath) {
     if ($object instanceof SoapHeader) {
       $this->FixXmlNode($node, $object->data, $xpath);
     } elseif ($object instanceof SoapVar) {

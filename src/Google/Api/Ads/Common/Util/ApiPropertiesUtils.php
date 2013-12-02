@@ -23,6 +23,9 @@
 /**
  * A collection of utility methods for reading API property files.
  */
+
+namespace Google\Api\Ads\Common\Util;
+
 class ApiPropertiesUtils {
 
   /**

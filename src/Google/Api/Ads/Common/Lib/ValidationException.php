@@ -34,7 +34,9 @@
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-class ValidationException extends Exception {
+namespace Google\Api\Ads\AdWords\Lib;
+
+class ValidationException extends \Exception {
 
     const EXCEPTION_FORMAT = 'Validation failed for [%s] with value [%s]: %s';
 

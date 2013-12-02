@@ -33,6 +33,8 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
+namespace Google\Api\Ads\Common\Util;
+
 class MapUtils {
   /**
    * The MapUtils class is not meant to have any instances.

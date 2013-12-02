@@ -24,10 +24,11 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/Logger.php';
-require_once 'Google/Api/Ads/Common/Util/SimpleOAuth2Handler.php';
-require_once 'Google/Api/Ads/Common/Lib/SoapClientFactory.php';
-require_once 'Google/Api/Ads/Common/Lib/ValidationException.php';
+
+namespace Google\Api\Ads\Common\Lib;
+
+use Google\Api\Ads\Common\Util\Logger,
+    Google\Api\Ads\Common\Util\SimpleOAuth2Handler;
 
 /**
  * User class for all API modules using the Ads API.

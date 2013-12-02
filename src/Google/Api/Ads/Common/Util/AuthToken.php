@@ -24,8 +24,11 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/AuthTokenException.php';
-require_once 'Google/Api/Ads/Common/Util/CurlUtils.php';
+
+namespace Google\Api\Ads\Common\Util;
+
+use \Google\Api\Ads\Common\Util\AuthTokenException,
+	\Google\Api\Ads\Common\Util\CurlUtils;
 
 /**
  * Client used to retrieve authentication tokens from the Client Login API.

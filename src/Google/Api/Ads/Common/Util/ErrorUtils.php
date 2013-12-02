@@ -33,6 +33,9 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
+
+namespace Google\Api\Ads\Common\Util;
+
 class ErrorUtils {
   private static $API_EXCEPTION_FIELD_NAME = 'ApiExceptionFault';
   private static $OPERATION_INDEX_OGNL_REGEX = '/^operations\[(\d+)\]/';

@@ -36,6 +36,9 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
+
+namespace Google\Api\Ads\Common\Util;
+
 class MediaUtils {
   /**
    * The MediaUtils class is not meant to have any instances.

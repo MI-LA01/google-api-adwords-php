@@ -27,6 +27,8 @@
 /**
  * A collection of utility methods for working with cURL.
  */
+namespace Google\Api\Ads\Common\Util;
+
 class CurlUtils {
 
   /**
