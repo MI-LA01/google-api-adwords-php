@@ -29,7 +29,7 @@
 
 namespace Google\Api\Ads\AdWords\v201306;
 
-use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient;
+use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient,
     Google\Api\Ads\AdWords\v201306\Common\AdExtensionOverrideServiceGet;
 
 /**
