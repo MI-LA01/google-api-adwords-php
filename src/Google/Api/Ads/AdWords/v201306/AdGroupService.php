@@ -27,8 +27,6 @@
  * @author     Paul Matthews
  */
 
-/** Required classes. **/
-
 namespace Google\Api\Ads\AdWords\v201306;
 
 use \Google\Api\Ads\AdWords\Lib\AdWordsSoapClient,
