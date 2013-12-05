@@ -64,10 +64,14 @@ abstract class SoapClientFactory {
   }
 
   /**
+   * {{{ KROKNET - ALEXIS GRUET 
+   * DEPRECATED
+   * }}} KROKNET - ALEXIS GRUET
+   * 
    * Initiates a require_once for the service.
    * @param string $serviceName the service to instantiate
    */
-  abstract public function DoRequireOnce($serviceName);
+  //abstract public function DoRequireOnce($serviceName);
 
   /**
    * Generates a SOAP client for the given service name. Generates a user level
@@ -78,7 +82,9 @@ abstract class SoapClientFactory {
    */
   public function GenerateSoapClient($serviceName) {
     if (extension_loaded('soap')) {
-      $this->DoRequireOnce($serviceName);
+      //{{{ KROKNET - Alexis Gruet
+      //$this->DoRequireOnce($serviceName);
+      //}}} KROKNET - Alexis Gruet
       $soapClient = $this->GenerateServiceClient($serviceName);
       return $soapClient;
     } else {

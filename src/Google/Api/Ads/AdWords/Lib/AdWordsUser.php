@@ -49,8 +49,8 @@ use \Google\Api\Ads\Common\Lib\AdsUser,
 class AdWordsUser extends AdsUser {
 
   const OAUTH2_SCOPE = 'https://adwords.google.com/api/adwords/';
-  const OAUTH2_HANDLER_CLASS = '\Google\Api\Ads\Common\Util\SimpleOAuth2Handler';
-
+  const OAUTH2_HANDLER_CLASS = '\\Google\\Api\\Ads\\Common\\Util\\SimpleOAuth2Handler';
+  const NS_SERVICE = '\\Google\\Api\\Ads\\AdWords\\v201306';
   /**
    * The name of the SOAP header that represents the user agent making API
    * calls.
@@ -260,7 +260,9 @@ class AdWordsUser extends AdsUser {
     }
     $serviceFactory = new AdWordsSoapClientFactory($this, $version, NULL, NULL,
         NULL);
-    $serviceFactory->DoRequireOnce($serviceName);
+    //{{{ Kroknet Alexis Gruet
+    //$serviceFactory->DoRequireOnce($serviceName);
+    //}}} Kroknet Alexis Gruet
   }
 
   /**
@@ -461,7 +463,10 @@ class AdWordsUser extends AdsUser {
   public function __call($name, $arguments) {
     // Handle calls to legacy Get*Service() methods.
     if (preg_match('/^Get(\w+Service)$/i', $name, $matches)) {
-      $serviceName = $matches[1];
+      //{{{ Kroknet - Alexis Gruet	
+      //$serviceName = $matches[1];
+      $serviceName = self::NS_SERVICE . '\\' . $matches[1];
+      //}}} End Kroknet 
       array_unshift($arguments, $serviceName);
       return call_user_func_array(array($this, 'GetService'), $arguments);
     }
