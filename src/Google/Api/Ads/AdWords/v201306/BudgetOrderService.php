@@ -30,7 +30,9 @@
 namespace Google\Api\Ads\AdWords\v201306;
 
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient,
-	Google\Api\Ads\AdWords\v201306\Common\BudgetOrderServiceGet;
+	Google\Api\Ads\AdWords\v201306\Common\BudgetOrderServiceGet,
+	Google\Api\Ads\AdWords\v201306\Common\getBillingAccounts,
+	Google\Api\Ads\AdWords\v201306\Common\BudgetOrderServiceMutate;
 
 /**
  * BudgetOrderService

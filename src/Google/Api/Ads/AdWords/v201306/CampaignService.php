@@ -30,7 +30,9 @@
 namespace Google\Api\Ads\AdWords\v201306;
 
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient,
-	Google\Api\Ads\AdWords\v201306\Common\CampaignServiceGet;
+	Google\Api\Ads\AdWords\v201306\Common\CampaignServiceGet,
+	Google\Api\Ads\AdWords\v201306\Common\CampaignServiceMutate,
+	Google\Api\Ads\AdWords\v201306\Common\query;
 
 /**
  * CampaignService

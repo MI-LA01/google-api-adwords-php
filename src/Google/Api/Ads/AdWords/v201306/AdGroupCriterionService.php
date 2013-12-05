@@ -30,7 +30,9 @@
 namespace Google\Api\Ads\AdWords\v201306;
 
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient,
-	Google\Api\Ads\AdWords\v201306\Common\AdGroupCriterionServiceGet;
+	Google\Api\Ads\AdWords\v201306\Common\AdGroupCriterionServiceGet,
+	Google\Api\Ads\AdWords\v201306\Common\AdGroupCriterionServiceMutate,
+	Google\Api\Ads\AdWords\v201306\Common\query;
 
 class AdGroupCriterionService extends AdWordsSoapClient {
   /**

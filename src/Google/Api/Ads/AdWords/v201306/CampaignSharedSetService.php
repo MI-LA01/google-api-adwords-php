@@ -30,7 +30,8 @@
 namespace Google\Api\Ads\AdWords\v201306;
 
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient,
-	Google\Api\Ads\AdWords\v201306\Common\CampaignSharedSetServiceGet;
+	Google\Api\Ads\AdWords\v201306\Common\CampaignSharedSetServiceGet,
+	Google\Api\Ads\AdWords\v201306\Common\CampaignSharedSetServiceMutate;
 
 /**
  * CampaignSharedSetService

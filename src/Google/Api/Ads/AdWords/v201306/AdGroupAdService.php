@@ -32,7 +32,9 @@
 namespace Google\Api\Ads\AdWords\v201306;
 
 use \Google\Api\Ads\AdWords\Lib\AdWordsSoapClient,
-    \Google\Api\Ads\AdWords\v201306\Common\AdGroupAdServiceGet;
+    \Google\Api\Ads\AdWords\v201306\Common\AdGroupAdServiceGet,
+    \Google\Api\Ads\AdWords\v201306\Common\AdGroupAdServiceMutate,
+    \Google\Api\Ads\AdWords\v201306\Common\query;
 
 /**
  * AdGroupAdService

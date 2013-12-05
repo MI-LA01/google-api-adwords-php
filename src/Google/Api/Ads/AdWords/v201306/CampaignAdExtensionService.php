@@ -30,7 +30,8 @@
 namespace Google\Api\Ads\AdWords\v201306;
 
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient,
-	Google\Api\Ads\AdWords\v201306\Common\CampaignAdExtensionServiceGet;
+	Google\Api\Ads\AdWords\v201306\Common\CampaignAdExtensionServiceGet,
+	Google\Api\Ads\AdWords\v201306\Common\CampaignAdExtensionServiceMutate;
 
 /**
  * CampaignAdExtensionService
@@ -210,6 +211,4 @@ class CampaignAdExtensionService extends AdWordsSoapClient {
     $result = $this->__soapCall("mutate", array($arg));
     return $result->rval;
   }
-
-
-}}
+}
