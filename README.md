@@ -46,6 +46,7 @@ Example with AWQL ( Prefered )
 ------------------------------
 
 ```php
-$oAdGroupAdPage = $app['adwords']->GetAdGroupAdService()->query( "SELECT Id, Name, AdGroupId WHERE Id IN [ 3333333, 33333222, 33323232, 323234435 ]" );
+$oAdGroupAdPage = $app['adwords']->GetAdGroupAdService()
+								 ->query( "SELECT Id, Name, AdGroupId WHERE Id IN [ 3333333, 33333222, 33323232, 323234435 ]" );
 ```
 of course this object could be used through the Symfony2 serializer to render xml or json representation. 
