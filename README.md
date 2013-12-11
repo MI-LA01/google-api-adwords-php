@@ -1,9 +1,46 @@
-AdWords API PHP Client
-============================
+Silex Provider / Symfony2  - AdWords API Client
+===============================================
 
-Current versions supported: 
+Currently only the v201306 is supported. ( will upgrade soonly )
+----------------------------------------
+ - Refactorized lib of the google-api-adwords-php to support psr-0. 
+ - A Silex Provider for the google-api-adwords-php
 
-v201306
+Installation
+------------
+git clone this reps under your vendor folder 
 
-In Progress,  Please don't fork or checkout
+Autoload
+--------
 
+$load = require_once __DIR__.'/../vendor/autoload.php';
+
+$load -> add( 'Google', __DIR__. '/../vendor/google-api-adwords-php/src/'  );
+$load ->register();
+
+via Composer
+------------
+not yet implemented
+
+
+Configuration ( MCC account mandatory ) 
+---------------------------------------
+
+$app->register( new Google\Silex\AdwordsApiServiceProvider, array(
+	'adwords.auth.developerToken' 	=> '__YOUR_TOKEN_HERE__',
+	'adwords.auth.userAgent'	  	=> 'myUserAgent',
+	'adwords.auth.clientCustomerId'	=> '694-xxx-xx70',
+	'adwords.auth.oauth2'			=> array(
+		'client_id' 		=> 'xxxxxxxxxx.apps.googleusercontent.com',
+		'client_secret' 	=> 'myClientSecret',
+		'refresh_token'		=> 'MyRefreshToken'
+	)
+));
+
+
+Example with AWQL ( Prefered )
+------------------------------
+
+$oAdGroupAdPage = $app['adwords']->GetAdGroupAdService()->query( "SELECT Id, Name, AdGroupId WHERE Id IN [ 3333333, 33333222, 33323232, 323234435 ]" );
+
+of course this object could be used through the Symfony2 serializer to render xml or json representation. 
